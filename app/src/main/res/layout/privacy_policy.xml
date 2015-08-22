@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="3" >
+    
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="33dp"
+       
+        android:gravity="center"
+        android:text="Privacy Policy"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#707883"
+        android:textSize="19sp" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+            
+             <TextView
+                 android:id="@+id/p1"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="left"
+                 android:layout_marginLeft="10dp"
+                 android:layout_marginTop="33dp"
+                 android:gravity="center"
+                 android:text="1. Your Acceptance"
+                 android:textAppearance="?android:attr/textAppearanceLarge"
+                 android:textColor="#707883"
+                 
+                 android:textSize="19sp" />
+             
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:layout_margin="5dp"
+                  android:background="#707883"
+                  android:orientation="vertical" >
+             
+             <TextView
+                 android:id="@+id/p2"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="left"
+                 android:layout_marginLeft="25dp"
+                 android:layout_marginTop="10dp"
+                 
+                 android:text="This is an agreement between MEDITRACKER INC AND THE USER (YOU).\nBY USING THE SERVICE, YOU ACKNOWLEDGE AND AGREE TO THESE TERMS OF SERVICE, AND Meditracker&apos;S PRIVACY POLICY, \nIf you choose to not agree with any of these terms, you may not use the Service."
+                 android:textColor="#ffffff"
+                 android:textSize="15sp" />
+             </LinearLayout>>
+
+     <Button
+         android:id="@+id/btn_submit"
+         android:layout_width="299dp"
+         android:layout_height="wrap_content"
+         android:layout_alignLeft="@+id/editTxt_no2"
+         android:layout_alignParentBottom="true"
+         android:layout_alignRight="@+id/editTxt_no2"
+         android:layout_gravity="center_horizontal"
+         android:layout_marginTop="54dp"
+		 android:background="@drawable/button"
+         android:text="Next"
+         android:textSize="16sp"
+         android:textColor="#FFFFFF" />
+    
+        </LinearLayout>
+    </ScrollView>
+
+     
+    </LinearLayout>

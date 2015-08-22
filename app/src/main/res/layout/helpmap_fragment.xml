@@ -1,0 +1,37 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:gravity="center" >
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/button"
+        android:drawableLeft="@mipmap/hospital_1"
+        android:paddingLeft="20dp"
+        android:text="Hospital"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textSize="25dp" />
+
+    <Button
+        android:id="@+id/Button01"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:layout_alignLeft="@+id/button1"
+        android:layout_below="@+id/button1"
+        android:layout_marginTop="27dp"
+        android:background="@drawable/button"
+        android:drawableLeft="@mipmap/medical_1"
+        android:paddingLeft="20dp"
+        android:drawablePadding="7dp"
+        android:text="Medical Store"
+        android:textColor="#ffffff"
+        android:textSize="25dp" />
+
+</RelativeLayout>

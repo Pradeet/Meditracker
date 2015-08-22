@@ -1,0 +1,47 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:gravity="center"
+    android:scaleType="centerCrop"
+    tools:context=".FirstAid_Fragment"
+    tools:ignore="MergeRootFrame" >
+
+         <Button
+             android:id="@+id/Hindi"
+             android:layout_width="280dp"
+             android:layout_height="70dp"
+             android:layout_below="@+id/English"
+             android:layout_centerHorizontal="true"
+             android:layout_gravity="center"
+             android:layout_marginTop="27dp"
+             android:background="@drawable/button"
+             android:text="हिंदी"
+             android:textColor="#ffffff" />
+         
+            <Button
+             android:id="@+id/Marathi"
+             android:layout_width="280dp"
+             android:layout_height="70dp"
+             android:layout_below="@+id/Hindi"
+             android:layout_centerHorizontal="true"
+             android:layout_gravity="center"
+             android:layout_marginTop="27dp"
+             android:background="@drawable/button"
+             android:text="मराठी"
+             android:textColor="#ffffff" />
+
+    <Button
+        android:id="@+id/English"
+        android:layout_width="280dp"
+        android:layout_height="70dp"
+        android:layout_alignLeft="@+id/Hindi"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center_horizontal"
+    
+        android:background="@drawable/button"
+        android:text="English"
+        android:textColor="#ffffff" />
+   
+</RelativeLayout>

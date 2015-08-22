@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kumbhthon.meditracker"
+    android:installLocation="auto"
+    android:versionCode="6"
+    android:versionName="1.5">
+
+    <uses-sdk
+        android:minSdkVersion="7"
+        android:targetSdkVersion="22" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="com.kumbhthon.meditracker.permission.READ_GSERVICES" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
+
+    <!-- Required to show current location -->
+
+
+    <permission
+        android:name="com.kumbhthon.meditracker.activity.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+    <permission
+        android:name="com.kumbhthon.permission.Test"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.kumbhthon.meditracker.permission.MAPS_RECEIVE" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <meta-data
+        android:name="com.google.android.gms.version"
+        android:value="4452000" />
+
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.kumbhthon.meditracker.SplashscreenActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.kumbhthon.meditracker.RegistrationActivity"
+            android:label="@string/title_activity_registration">
+
+        </activity>
+        <activity
+            android:name="com.kumbhthon.meditracker.HomeScreenActivity"
+            android:label="@string/title_activity_home_screen">
+
+        </activity>
+        <activity
+            android:name="com.kumbhthon.meditracker.FirstAid_Fragment"
+            android:label="@string/title_activity_first_aid__fragment">
+
+        </activity>
+        <activity
+            android:name="com.kumbhthon.meditracker.MapActivity"
+            android:label="@string/title_activity_h__map">
+
+        </activity>
+
+        <activity
+            android:name="com.kumbhthon.meditracker.Medical_map"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AppCompat.Light">
+
+        </activity>
+        <activity
+            android:name="com.kumbhthon.meditracker.Main_Ex_Hindi"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AppCompat.Light">
+
+        </activity>
+        <activity
+            android:name="com.kumbhthon.meditracker.Main_Ex_Marathi"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AppCompat.Light">
+
+        </activity>
+
+
+        <activity
+            android:name=".TransperentActivity"
+            android:label="@string/app_name"
+            android:permission="com.kumbhthon.permission.Test"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="com.example.emergencyhelp.MainWidget.ACTION_SMS_CALL" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".MainWidget"
+            android:label="@string/app_name"
+            android:permission="com.kumbhthon.permission.Test">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.kumbhthon.meditracker.MainWidget.ACTION_RECORDER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/button_widget_provider" />
+        </receiver>
+
+        <service
+            android:name="com.kumbhthon.meditracker.LocService"
+            android:enabled="false" />
+        <service
+            android:name="com.kumbhthon.meditracker.TickService"
+            android:enabled="true" />
+
+        <receiver
+            android:name="com.kumbhthon.meditracker.TickReceiver"
+            android:enabled="false">
+            <intent-filter>
+                <action android:name="android.intent.action.TIME_TICK" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <!--    <action android:name="android.intent.action.ACTION_POWER_CONNECTED" >
+                   </action>
+                   <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" >
+                   </action>
+                   <action android:name="android.intent.action.WALLPAPER_CHANGED" />
+                   <action android:name="android.intent.action.UID_REMOVED" /> -->
+            </intent-filter>
+        </receiver>
+
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyDnJlZhcK-9ogwRJtxJaoRwiD-7-6GYPmk" />
+    </application>
+
+</manifest>

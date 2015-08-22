@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+     android:scaleType="fitCenter"
+     >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+            
+            <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="3" >
+
+        <Button
+            android:id="@+id/govt"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/button"
+       	  	android:text="108"
+           android:textSize="16sp"
+         android:textColor="#FFFFFF"/>
+
+    </LinearLayout>
+
+		  
+
+  <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+       	android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="3" >
+		    
+	<Button
+            android:id="@+id/got_district_hosp"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/button"
+       	  	android:text="Government District Hospital"
+           android:textSize="16sp"
+         android:textColor="#FFFFFF"/>
+
+		    </LinearLayout>
+		    
+		    <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="0dp"
+     android:layout_marginTop="10dp"
+     android:layout_weight="1"
+     android:orientation="horizontal"
+     android:weightSum="3" >
+		    
+		    <Button
+		        android:id="@+id/nmc"
+		        android:layout_width="match_parent"
+		        android:layout_height="fill_parent"
+		        android:layout_gravity="left"
+		        android:layout_marginLeft="10dp"
+		        android:layout_marginRight="10dp"
+		        android:background="@drawable/button"
+		        
+		        android:text="Nashik MunicipalCorporation"
+		      
+		     
+		         android:textSize="16sp"
+        		 android:textColor="#FFFFFF" />
+
+		    </LinearLayout>
+
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="0dp"
+     android:layout_marginTop="10dp"
+     android:layout_weight="1"
+     android:orientation="horizontal"
+     android:weightSum="3" >
+		    
+		    <Button
+		        android:id="@+id/red_cros"
+		        android:layout_width="match_parent"
+		        android:layout_height="fill_parent"
+		        android:layout_gravity="left"
+		        android:layout_marginLeft="10dp"
+		        android:layout_marginRight="10dp"
+		        android:background="@drawable/button"
+		        
+		        android:text="Redcros Mahatma Gandhiroad"
+		      
+		       
+		         android:textSize="16sp"
+        		 android:textColor="#FFFFFF" />
+
+
+		    </LinearLayout>
+		    
+		      <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="0dp"
+     android:layout_marginTop="10dp"
+     android:layout_weight="1"
+     android:orientation="horizontal"
+     android:weightSum="3" >
+
+		      <Button
+		        android:id="@+id/esi_hosp"
+		        android:layout_width="match_parent"
+		        android:layout_height="fill_parent"
+		        android:layout_gravity="left"
+		        android:layout_marginLeft="10dp"
+		        android:layout_marginRight="10dp"
+		        android:background="@drawable/button"
+		        
+		        android:text="E.S.I. Hopsital,Satpur"
+		      
+		       
+		         android:textSize="16sp"
+        		 android:textColor="#FFFFFF" />
+ 
+		    </LinearLayout>
+		    
+		     <LinearLayout
+		         android:layout_width="match_parent"
+		         android:layout_height="0dp"
+		         android:layout_marginBottom="10dp"
+		         android:layout_marginTop="10dp"
+		         android:layout_weight="1"
+		         android:orientation="horizontal"
+		         android:weightSum="3" >
+
+		     <Button
+		        android:id="@+id/shivsena"
+		        android:layout_width="match_parent"
+		        android:layout_height="fill_parent"
+		        android:layout_gravity="left"
+		        android:layout_marginLeft="10dp"
+		        android:layout_marginRight="10dp"
+		        android:background="@drawable/button"
+		        
+		        android:text="Shivsena Mhahanagar"
+		       
+		       
+		         android:textSize="16sp"
+        		 android:textColor="#FFFFFF" />
+		    
+		    
+		</LinearLayout>
+		      <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="0dp"
+     android:layout_marginTop="10dp"
+     android:layout_weight="1"
+     android:orientation="horizontal"
+     android:weightSum="3" >
+
+		      <Button
+		        android:id="@+id/ips"
+		        android:layout_width="match_parent"
+		        android:layout_height="fill_parent"
+		        android:layout_gravity="left"
+		        android:layout_marginLeft="10dp"
+		        android:layout_marginRight="10dp"
+		        android:background="@drawable/button"
+		        
+		        android:text="IPS Note Press,Nashik Road"
+		  
+		         android:textSize="16sp"
+        		 android:textColor="#FFFFFF" />
+ 
+		    </LinearLayout>
+		    
+		            <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="0dp"
+     android:layout_marginTop="10dp"
+     android:layout_weight="1"
+     android:orientation="horizontal"
+     android:weightSum="3" >
+
+		      <Button
+		        android:id="@+id/rajdut"
+		        android:layout_width="match_parent"
+		        android:layout_height="fill_parent"
+		        android:layout_gravity="left"
+		        android:layout_marginLeft="10dp"
+		        android:layout_marginRight="10dp"
+		        android:background="@drawable/button"
+		        
+		        android:text="Rajdut Mitramandal"
+		       
+		       
+		         android:textSize="16sp"
+        		 android:textColor="#FFFFFF" />
+ 
+		    </LinearLayout>
+		          <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="0dp"
+     android:layout_marginTop="10dp"
+     android:layout_weight="1"
+     android:orientation="horizontal"
+     android:weightSum="3" >
+
+		      <Button
+		        android:id="@+id/contomnet"
+		        android:layout_width="match_parent"
+		        android:layout_height="fill_parent"
+		        android:layout_gravity="left"
+		        android:layout_marginLeft="10dp"
+		        android:layout_marginRight="10dp"
+		        android:background="@drawable/button"
+		        
+		        android:text="Cantonment Board,Devlali Camp"
+		
+		       
+		         android:textSize="16sp"
+        		 android:textColor="#FFFFFF" />
+ 
+		    </LinearLayout>
+		    
+		            <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="0dp"
+     android:layout_marginTop="10dp"
+     android:layout_weight="1"
+     android:orientation="horizontal"
+     android:weightSum="3" >
+
+		      <Button
+		        android:id="@+id/jayram"
+		        android:layout_width="match_parent"
+		        android:layout_height="fill_parent"
+		        android:layout_gravity="left"
+		        android:layout_marginLeft="10dp"
+		        android:layout_marginRight="10dp"
+		        android:background="@drawable/button"
+		        
+		        android:text="Jayram Hospital, Nashik Road"
+
+		         android:textSize="16sp"
+        		 android:textColor="#FFFFFF" />
+ 
+		    </LinearLayout>
+		    
+		          
+		  <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="0dp"
+     android:layout_marginTop="10dp"
+     android:layout_weight="1"
+     android:orientation="horizontal"
+     android:weightSum="3" >
+
+		      <Button
+		        android:id="@+id/aparn"
+		        android:layout_width="match_parent"
+		        android:layout_height="fill_parent"
+		        android:layout_gravity="left"
+		        android:layout_marginLeft="10dp"
+		        android:layout_marginRight="10dp"
+		        android:background="@drawable/button"
+		        
+		        android:text="Aparn Trust"
+		     
+		         android:textSize="16sp"
+        		 android:textColor="#FFFFFF" />
+ 
+		    </LinearLayout>
+		    
+		    <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="0dp"
+     android:layout_marginTop="10dp"
+     android:layout_weight="1"
+     android:orientation="horizontal"
+     android:weightSum="3" >
+
+		      <Button
+		        android:id="@+id/bahujan"
+		        android:layout_width="match_parent"
+		        android:layout_height="fill_parent"
+		        android:layout_gravity="left"
+		        android:layout_marginLeft="10dp"
+		        android:layout_marginRight="10dp"
+		        android:background="@drawable/button"
+		        
+		        android:text="Bahujan yua Sanghatna,Nashk Road"
+		       android:textSize="16sp"
+        		 android:textColor="#FFFFFF" />
+ 
+		    </LinearLayout>
+		    
+		      <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="0dp"
+     android:layout_marginTop="10dp"
+     android:layout_weight="1"
+     android:orientation="horizontal"
+     android:weightSum="3" >
+
+		      <Button
+		        android:id="@+id/vison"
+		        android:layout_width="match_parent"
+		        android:layout_height="fill_parent"
+		        android:layout_gravity="left"
+		        android:layout_marginLeft="10dp"
+		        android:layout_marginRight="10dp"
+		        android:background="@drawable/button"
+		        
+		        android:text="Vision Hospital"
+		       android:textSize="16sp"
+        		 android:textColor="#FFFFFF" />
+ 
+		    </LinearLayout>
+		    
+		        <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="0dp"
+     android:layout_marginTop="10dp"
+     android:layout_weight="1"
+     android:orientation="horizontal"
+     android:weightSum="3" >
+
+		      <Button
+		        android:id="@+id/sitabai"
+		        android:layout_width="match_parent"
+		        android:layout_height="fill_parent"
+		        android:layout_gravity="left"
+		        android:layout_marginLeft="10dp"
+		        android:layout_marginRight="10dp"
+		        android:background="@drawable/button"
+		        
+		        android:text="Sitabai More Hospital,Cidco"
+		      
+		         android:textSize="16sp"
+        		 android:textColor="#FFFFFF" />
+ 
+		    </LinearLayout>
+		      <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="0dp"
+     android:layout_marginTop="10dp"
+     android:layout_weight="1"
+     android:orientation="horizontal"
+     android:weightSum="3" >
+
+		      <Button
+		        android:id="@+id/dr_vincurkar"
+		        android:layout_width="match_parent"
+		        android:layout_height="fill_parent"
+		        android:layout_gravity="left"
+		        android:layout_marginLeft="10dp"
+		        android:layout_marginRight="10dp"
+		        android:background="@drawable/button"
+		        
+		        android:text="Dr. Vinchurkar,Trimbak Naka"
+		       
+		         android:textSize="16sp"
+        		 android:textColor="#FFFFFF" />
+ 
+		    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    
+		
+
+		
+</LinearLayout>

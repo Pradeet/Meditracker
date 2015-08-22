@@ -1,0 +1,397 @@
+package com.kumbhthon.meditracker;
+
+//import android.R;
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationManager;
+import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.webkit.WebView;
+import android.widget.TabHost;
+import android.widget.Toast;
+
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
+
+public class Medical_map extends FragmentActivity 
+{
+	// Google Map
+    private GoogleMap googleMap;
+    private WebView programWebView;
+   
+    
+    //Medical Arrays
+    private double latt2[]={20.00588
+    		,20.000869
+    		,19.998518
+    		,23.057449
+    		,20.001167
+    		,20.005024
+    		,19.995156
+    		,19.995605
+    		,20.006061
+    		,19.9956
+    		,20.147794
+    		,19.948681
+    		,20.005314
+    		,19.995156
+    		,19.995836
+    		,19.995217
+    		,19.993074
+    		,19.991066
+    		,19.949728
+    		,20.001936
+    		,19.952405
+    		,19.949728
+    		,20.002883
+    		,19.996389
+    		,20.013962
+    		,19.995836
+    		,19.961708
+    		,19.952405
+    		,20.004178
+    		,19.998518
+    		,19.914248
+    		,20.00603
+    		,20.00603
+    		,20.005024
+    		,19.998518
+    		,19.979991
+    		,19.948681
+    		,19.995217
+    		,19.99587
+    		,19.9956
+    		,19.603817
+    		,19.98008
+    		,19.98008
+    		,19.998518
+    		,19.85
+    		,20.00603
+    		,20.006294
+    		,20.002883,19.966573,19.966371
+};
+    private double lon2[]={73.793381
+    		,20.000869
+    		,73.79191
+    		,72.622201
+    		,73.78408
+    		,73.767826
+    		,73.798708
+    		,73.853668
+    		,73.780339
+    		,73.775522
+    		,73.748958
+    		,73.835487
+    		,73.783454
+    		,73.798708
+    		,73.778674
+    		,73.756611
+    		,73.803712
+    		,73.735543
+    		,73.839002
+    		,73.77422
+    		,73.824262
+    		,73.839002
+    		,73.788929
+    		,73.781785
+    		,73.810293
+    		,73.778674
+    		,73.831622
+    		,73.824262
+    		,73.789021
+    		,73.79191
+    		,73.89948
+    		,73.762911
+    		,73.79191
+    		,73.767826
+    		,73.79191
+    		,73.759572
+    		,19.948681
+    		,73.756611
+    		,73.786763
+    		,73.775522
+    		,19.603817
+    		,73.780145
+    		,73.780145
+    		,73.79191
+    		,74
+    		,73.762911
+    		,73.782465
+    		,73.788929,73.661603,73.654307
+};
+    
+   
+    private String nameMed[] ={"Yash Medical",
+    		"Shreesai Medical",
+    		"Pritam Medical",
+    		"Navin Medical and Ganral Stores",
+    		"City Medical Stores",
+    		"Manu Medical",
+    		"Agrawal Medical",
+    		"Global Medicare Systems",
+    		"Tejal Medical and Janral",
+    		"Burkul Coop HSG Soc Ltd",
+    		"Gurukripa Medical Store",
+    		"Deolali Medical Stores",
+    		"Devi Agencies",
+    		"Dinesh Medicals",
+    		"Gunwant Medical",
+    		"Anand Medical",
+    		"Ashu Medicals",
+    		"Deeplaxmi Medical",
+    		"P K Medicals",
+    		"Charugatri Medicals",
+    		"New Sahyadri Medical Store",
+    		"Surana Medical",
+    		"Shreepharma Medical",
+    		"Swami Samarth Agencies Shree",
+    		"Universal Medikit Pvt Ltd",
+    		"Vasant Distributers",
+    		"Vijay Medical Stores",
+    		"Vyanktesh Medical Store",
+    		"Milan Medical Store",
+    		"Rahat Medical Store",
+    		"Renuka Industries",
+    		"Tushar Medical And Genl Stores",
+    		"Panchvati Medicals",
+    		"Ahirrao Color Art Lab",
+    		"Shree Ganesh Medical",
+    		"New Mahesh Medical",
+    		"Deolali Medical General Stores",
+    		"Anand Medical & General Stores",
+    		"Kimatlok Medical",
+    		"Rajdoot Medical Store",
+    		"Avinash Medical Stores",
+    		"Alankar Medical & General Store",
+    		"Vijay Medical",
+    		"Umrao Medical & General Stores",
+    		"Sinnar Medical",
+    		"Shreyas Medical",
+    		"Samarth Medical",
+    		"Pathak Medicine Shop","Gaikvad Medical","Swapnil Medical"
+};
+    private String add[] ={"Shop No.27, Pradhan Park, M.G.Road, Nasik, Maharashtra - 422001",
+    		"Shoping Centre, Old Cidco, Nasik, Maharashtra - 422001",
+    		"50, Munciple Shoppe, Shivaji Road, Nasik, Maharashtra - 422001",
+    		"College Road, Canada Corner, Nasik, Maharashtra - 422005",
+    		"Basement 1, M.G.Road, Nasik, Maharashtra - 422001",
+    		"Heena Bunglow, Upnagar, Nasik, Maharashtra - 422006",
+    		"Gangapoor Road, Ashok Stambh, Nasik, Maharashtra - 422001",
+    		"Bglw 45, Vanvihar Colony, Trimbak Road, Nasik, Maharashtra - 422002",
+    		"4, Guru Kripa Apartment, Peth Road, Panchavati, Nasik, Maharashtra - 422003",
+    		"41, Howson Road, Opp Bus Stand Deolali, Nasik, Maharashtra - 422401",
+    		"Shop No 1, Vishnu Prasad Apartment, Gole Colony, Nasik, Maharashtra - 422002",
+    		"267, M G Road, Nasik, Maharashtra - 422001",
+    		"Balwant Chambers, 5, Sharanpur Road, New Pandit Colony, Nasik, Maharashtra - 422002",
+    		"6, Sushila Height, Parijat Nagar, Nasik, Maharashtra - 422005",
+    		"Harihar Society, Poona Road, Dwarka, Nasik, Maharashtra - 422011",
+    		"Trimbak Road, Satpur, Nasik, Maharashtra - 422007",
+    		"Nasik Road, Shahu Path, Nasik, Maharashtra - 422101",
+    		"Gautam Sharanpur Road, New Pandit Colony, Nasik, Maharashtra - 422005",
+    		"Dehburz Building, Poona Road, Nasik Road, Bytco Point, Nasik, Maharashtra - 422101",
+    		"2 Adc, Bytco Memorial Hospital, Shahu Path, Nasik, Maharashtra - 422101",
+    		"89, Main Road, Nasik, Maharashtra - 422001",
+    		"16, Vatsala Niwas Gole Complete Basement, Old Agra Road, Nasik, Maharashtra - 422002",
+    		"6 Pathik Society, Krushna Nagar, Old Adgaon Naka Panchvati, Nasik, Maharashtra - 422003",
+    		"Commercial Complex, Gangapur Road, First Floor, Vitthal Park, Nasik, Maharashtra - 422002",
+    		"Nasik Pune Road, Opp Durga Udyan Nasik Road, Nasik, Maharashtra - 422101",
+    		"Mahesg Vihar 27, Nasik Road, Shivagi Nagar, Nasik, Maharashtra - 422101",
+    		"431, Main Street, Deolali, Nasik, Maharashtra - 422001",
+    		"203/206, Wadala Naka Poona Road, Nakshne Nagar, Nasik, Maharashtra - 422001",
+    		"A-25, Musalgaon Midc Sinnar, Nasik, Maharashtra - 422103",
+    		"9, Shivkannchi Apartment, College Road, Nasik, Maharashtra - 422005",
+    		"B-2, Nadkarni Chambers, M G Road, Vakilwadi, Nasik, Maharashtra - 422001",
+    		"9, Shivkannchi Apartment, College Road, Nasik",
+    	    "B-2, Nadkarni Chambers, M G Road, Vakilwadi, Nasik",
+    		"Kamal, HPT College Road, Canada Corner, Nashik - 422005",
+    		"Nehte Hospital,Mumbai Naka,Nashik - 422001",
+    		"N/1/A/72,Cidco,Nashik - 422008",
+    		"41, Opp Bus Stop,Howson Road,Deolali,Nashik - 422401",
+    		"6 Sushila Height,Parijat Nagar,Nashik - 422005",
+    		"B/7 Sona Shopping Centre,Feet Rd,Ganjmal,Nashik - 422001",
+    		"1362-A, Opp New Civil Hospital,Trimbak Road,Nashik - 422002",
+    		"93/2, Shivaji Road,Shivaji Chowk,Nashik - 422009",
+    		"N42/Vd1 198 4th Scheme,Savata Nagar,Cidco,Nashik - 422009",
+    		"Bhagur,Shivaji Chowk,Nashik - 422009",
+    		"1322, Phalke Road,Phule Market,Nashik - 422001",
+    		"Sinnar,Nashik - 422103",
+    		"College Road,Nashik - 422005",
+    		"9 Murkute Colony,Gangapur Road,Nashik - 422002",
+    		"35, Main Road,Nashik - 422001","Mahiravni,Trimbak Road Nashik","Mahiravani Trimbak Road Nashik"
+};
+    private String cont[] ={" 0253 - 2510002",
+    		"0253 - 2532310",
+    		"0253 - 2319091, 2598503",
+    		"0253 - 2393915",
+    		"0253 - 2507250",
+    		"9226144619",
+    		"0253 - 2581754",
+    		"9822401029",
+    		"0253 - 2310047, 2310047",
+    		"0253 - 2350834",
+    		"0253 - 2517733",
+    		"0253 - 4916872",
+    		"0253 - 2576051",
+    		"0253 - 2502218",
+    		"0253 - 2570081",
+    		"0253 - 2357658",
+    		"0253 - 2591357",
+    		"0253 - 2354836",
+    		"0253 - 2563854",
+    		"0253 - 2576481",
+    		"0253 - 2569873",
+    		"0253 - 2560580",
+    		"0253 - 2591156",
+    		"0253 - 2313058",
+    		"0253 - 2516335",
+    		"0253 - 2310004",
+    		"0253 - 2561455",
+    		"0253 - 2560752",
+    		"0253 - 2542007",
+    		"0253 - 2596717",
+    		"0253 - 2240382",
+    		"0253 - 2576942",
+    		 "0253 - 2257888",
+    		"0253 - 2315480, 2315580",
+    		"(253)-2313075",
+    		"9822425591",
+    		"0253-2491687",
+    		"(253)-2357658",
+    		"(253)-2501316",
+    		"(253)-2581156",
+    		"(253)-2520082",
+    		"(253)-2391863",
+    		"(253)-2492057",
+    		"(253)-2508692",
+    		"9422769475",
+    		"(253)-2318069",
+    		"(253)-2312052",
+    		"(253)-2506848","7845619712","9547816479"
+};
+    
+    @Override
+    public void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.map_activity);  												
+        try 
+		{
+			
+            // Loading map
+			
+            initilizeMap();
+            
+            googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+         LatLng latLng = new LatLng(19.998176, 73.772719);      
+
+            // Show the current location in Google Map        
+            googleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+            googleMap.animateCamera(CameraUpdateFactory.zoomTo(13));
+            googleMap.setMyLocationEnabled(true);
+            LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+            Criteria criteria = new Criteria();
+
+            Location location = locationManager.getLastKnownLocation(locationManager.getBestProvider(criteria, false));
+            if (location != null)
+            {
+            	 googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(
+                        new LatLng(location.getLatitude(), location.getLongitude()), 13));
+
+                CameraPosition cameraPosition = new CameraPosition.Builder()
+                .target(new LatLng(location.getLatitude(), location.
+                getLongitude()))      // Sets the center of the map to location user
+                .zoom(17)                   // Sets the zoom
+              //  .bearing(90)                // Sets the orientation of the camera to east
+                .tilt(70)                   // Sets the tilt of the camera to 30 degrees
+                .build();                   // Creates a CameraPosition from the builder
+                googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+
+            }
+            
+
+          setMarkers2();
+          
+        }
+		catch (Exception e)
+		{
+            e.printStackTrace();
+        }
+		
+    }
+
+    
+   /* private void setMarkers()
+    {
+    	
+    	for (int i=0; i <= longi.length; i++)
+    	{
+    	 // create marker
+    		MarkerOptions marker = new MarkerOptions().position(new LatLng(lat[i], longi[i])).title("Hospital:"+nameHosp[i]+"\nAddress:"+address[i]+"\nContact:"+contact[i]);
+    		marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.h));
+        // adding marker
+    		googleMap.addMarker(marker);
+    	}
+    	setMarkers2();
+    }*/
+    private void setMarkers2()
+    {
+    	
+    	for (int i=0; i <= lon2.length; i++)
+    	{
+    	 // create marker
+    		MarkerOptions marker2 = new MarkerOptions().position(new LatLng(latt2[i], lon2[i])).title("Medical:"+nameMed[i]+"\nAddress:"+add[i]+"\nContact:"+cont[i]);
+  //  		
+    		marker2.icon(BitmapDescriptorFactory.fromResource(R.drawable.pill));
+    
+    	
+        // adding marker
+    		googleMap.addMarker(marker2);
+    		
+    		}
+    }
+   
+    
+    /**
+     * function to load map. If map is not created it will create it for you
+     * */
+    private void initilizeMap()
+    {
+        if (googleMap == null)
+        	//requestWindowFeature(Window.FEATURE_NO_TITLE);
+            //  getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, 
+              // WindowManager.LayoutParams.FLAG_FULLSCREEN);
+      		//setContentView(R.layout.map_activity);	
+      		
+        {
+        	SupportMapFragment mapFragment = (SupportMapFragment)getSupportFragmentManager().findFragmentById(R.id.map); 
+        			    		
+        			    		
+        			    		// Getting reference to the Google Map
+        			    		googleMap = mapFragment.getMap();          // check if map is created successfully or not
+        			            if (googleMap == null) {
+        			               Toast.makeText(getApplicationContext(),
+        			                        "Sorry! unable to create maps", Toast.LENGTH_SHORT)
+        			                        .show();
+            }
+            
+        }
+    }
+ 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        initilizeMap();
+    }
+ 
+    
+}

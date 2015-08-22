@@ -1,0 +1,20 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    
+    
+    tools:ignore="MergeRootFrame"
+    tools:context=".FirstAid_Fragment"
+       android:scaleType="centerCrop"
+     android:background="#707883" >
+
+     <ExpandableListView 
+        android:id="@+id/expandanlelisthelp"
+        android:layout_height="fill_parent"
+        android:layout_width="wrap_content"
+       android:divider="@android:color/transparent"
+       android:background="#ffffff"
+       
+      />
+</RelativeLayout>
