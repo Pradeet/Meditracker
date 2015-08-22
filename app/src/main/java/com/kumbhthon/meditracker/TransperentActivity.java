@@ -8,6 +8,8 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
 import android.telephony.SmsManager;
 
+import com.kumbhthon.meditracker.Utils.SharedPreferenceManager;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -17,7 +19,6 @@ public class TransperentActivity extends ActionBarActivity {
 
     SharedPreferences sharedPrefs;
     String lat, lon, add, pinCode;
-    //	TestAdapter mDbHelper;
     String no1, no2, hisNum, name;
 
     @Override
@@ -29,8 +30,6 @@ public class TransperentActivity extends ActionBarActivity {
         sharedPref.setBoolean("help", true);
         sharedPref.closeDB();
 
-//		mDbHelper = new TestAdapter(this);
-
         sharedPref.connectDB();
         mssgPhone = sharedPref.getString("smsNumber");
         lat = sharedPref.getString("lat");
@@ -41,25 +40,14 @@ public class TransperentActivity extends ActionBarActivity {
 
         message = "Need Help...";
 
-//		mDbHelper.open();
-//		Cursor c = mDbHelper.getTestData();
-
-//		 no1= c.getString(2);
-//		 hisNum= c.getString(1);
-//		 name =c.getString(0);
-
         System.out.println("no1" + no1);
         System.out.println("Pin Code" + pinCode);
-
-
-//		mDbHelper.close();
 
         mssgPhone = "";
 
         for (int i = 0; i <= MapActivity.address.length; i++) {
             if (MapActivity.address[i].contains(pinCode)) {
                 no2 = "108";
-                //	System.out.println("no2" +no2);
                 break;
             } else {
                 no2 = "108";
@@ -101,19 +89,12 @@ public class TransperentActivity extends ActionBarActivity {
     }
 
     private void makeCallHelp(final String number) {
-        new Thread() {
-            public void run() {
-
-                if (!number.equals("")) {
-                    Intent callIntent = new Intent(Intent.ACTION_CALL);
-                    callIntent.setData(Uri.parse("tel:" + number));
-                    TransperentActivity.this.startActivity(callIntent);
-
-                    finish();
-                }
-            }
-
-        }.start();
+        if (!number.equals("")) {
+            Intent callIntent = new Intent(Intent.ACTION_CALL);
+            callIntent.setData(Uri.parse("tel:" + number));
+            TransperentActivity.this.startActivity(callIntent);
+            finish();
+        }
     }
 
 

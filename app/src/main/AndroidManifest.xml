@@ -74,7 +74,7 @@
 
         </activity>
         <activity
-            android:name="com.kumbhthon.meditracker.FirstAid_Fragment"
+            android:name=".FirstAidActivity_English"
             android:label="@string/title_activity_first_aid__fragment">
 
         </activity>
@@ -91,13 +91,13 @@
 
         </activity>
         <activity
-            android:name="com.kumbhthon.meditracker.Main_Ex_Hindi"
+            android:name=".FirstAidActivity_Hindi"
             android:label="@string/app_name"
             android:theme="@style/Theme.AppCompat.Light">
 
         </activity>
         <activity
-            android:name="com.kumbhthon.meditracker.Main_Ex_Marathi"
+            android:name=".FirstAidActivity_Marathi"
             android:label="@string/app_name"
             android:theme="@style/Theme.AppCompat.Light">
 
@@ -130,14 +130,14 @@
         </receiver>
 
         <service
-            android:name="com.kumbhthon.meditracker.LocService"
+            android:name=".Utils.LocService"
             android:enabled="false" />
         <service
-            android:name="com.kumbhthon.meditracker.TickService"
+            android:name=".Utils.TickService"
             android:enabled="true" />
 
         <receiver
-            android:name="com.kumbhthon.meditracker.TickReceiver"
+            android:name=".Utils.TickReceiver"
             android:enabled="false">
             <intent-filter>
                 <action android:name="android.intent.action.TIME_TICK" />

@@ -3,11 +3,12 @@ package com.kumbhthon.meditracker;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.view.Menu;
 import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnGroupExpandListener;
 
-public class Main_Ex_Hindi extends Activity implements OnGroupExpandListener 
+import com.kumbhthon.meditracker.Adapter.FirstAidAdapter_marathi;
+
+public class FirstAidActivity_Marathi extends Activity implements OnGroupExpandListener
 {
 
 	ExpandableListView listView;
@@ -19,13 +20,14 @@ public class Main_Ex_Hindi extends Activity implements OnGroupExpandListener
         setContentView(R.layout.expan);
 
         listView=(ExpandableListView)findViewById(R.id.expandanlelisthelp);
-        listView.setAdapter(new MyAdapter_hindi(this));
+        listView.setAdapter(new FirstAidAdapter_marathi(this));
      
         listView.setOnGroupExpandListener(this);
         
     }
     
   
+   
    
    
     public void onGroupExpand(int groupPosition)

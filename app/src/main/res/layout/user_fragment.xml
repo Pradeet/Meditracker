@@ -4,103 +4,106 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff"
-    android:gravity="top" >
-    <ScrollView android:layout_weight="10" android:layout_width="fill_parent"
-		android:layout_height="fill_parent">
+    android:gravity="top">
 
-		<LinearLayout
-		    android:layout_width="match_parent"
-		    android:layout_height="match_parent"
-		    android:orientation="vertical" >
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="10">
 
-		    <TextView
-		        android:id="@+id/textView1"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:layout_alignParentLeft="true"
-		        android:layout_alignParentTop="true"
-		        android:layout_marginLeft="20dp"
-		        android:layout_marginTop="20dp"
-		        android:drawableLeft="@mipmap/icon_userguide"
-		        android:text=" Help widget"
-		        android:textColor="#707883"
-		        android:textSize="25dp"
-		        android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-		    <TextView
-		        android:id="@+id/textV"
-		        android:layout_width="fill_parent"
-		        android:layout_height="fill_parent"
-		        android:layout_alignLeft="@+id/textView1"
-		        android:layout_below="@+id/textView1"
-		        android:layout_gravity="fill_horizontal"
-		        android:layout_marginLeft="20dp"
-		        android:layout_marginTop="10dp"
-		        android:gravity="left"
-		        android:text="When we need medical emergencies “Help widget” will help you  with single touch,it will give information about injured person and its location to the registered numbers and at that instant call is made to the nearest hospital or  Clinic which is provided by Government."
-		        android:textAppearance="?android:attr/textAppearanceLarge"
-		        android:textColor="#707883"
-		        android:textSize="16dp" />
-		    	 
-		    <TextView
-		        android:id="@+id/t"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:layout_marginLeft="20dp"
-		        android:layout_marginTop="20dp"
-		        android:drawableLeft="@mipmap/icon_firstaid"
-		        android:text=" First Aid:"
-		        android:textColor="#707883"
-		        android:textSize="25dp"
-		        android:textStyle="bold" />
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:drawableLeft="@mipmap/icon_userguide"
+                android:text=" Help widget"
+                android:textColor="#707883"
+                android:textSize="25dp"
+                android:textStyle="bold" />
 
-		    <TextView
-		        android:id="@+id/t2"
-		        android:layout_width="match_parent"
-		        android:layout_height="fill_parent"
-		        android:layout_marginLeft="20dp"
-		        android:layout_marginTop="13dp"
-		        android:text="First Aid helps you to get the quick solution for the common diseases."
-		        android:textAppearance="?android:attr/textAppearanceLarge"
-		        android:textColor="#707883"
-		        android:textSize="16dp" />
+            <TextView
+                android:id="@+id/textV"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignLeft="@+id/textView1"
+                android:layout_below="@+id/textView1"
+                android:layout_gravity="fill_horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:gravity="left"
+                android:text="When we need medical emergencies “Help widget” will help you  with single touch,it will give information about injured person and its location to the registered numbers and at that instant call is made to the nearest hospital or  Clinic which is provided by Government."
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#707883"
+                android:textSize="16dp" />
 
-		    <TextView
-		        android:id="@+id/textVie"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:layout_alignParentLeft="true"
-		        android:layout_alignParentTop="true"
-		        android:layout_marginLeft="20dp"
-		        android:layout_marginTop="20dp"
-		        android:drawableLeft="@mipmap/icon_helpmap"
-		        android:text=" Help map"
-		        android:textColor="#707883"
-		        android:textSize="25dp"
-		        android:textStyle="bold" />
+            <TextView
+                android:id="@+id/t"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:drawableLeft="@mipmap/icon_firstaid"
+                android:text=" First Aid:"
+                android:textColor="#707883"
+                android:textSize="25dp"
+                android:textStyle="bold" />
 
-		    <TextView
-		        android:id="@+id/iew2"
-		        android:layout_width="305dp"
-		        android:layout_height="344dp"
-		        android:layout_alignLeft="@+id/textView1"
-		        android:layout_below="@+id/textView1"
-		        android:layout_gravity="fill_horizontal"
-		        android:layout_marginLeft="25dp"
-		        android:layout_marginTop="13dp"
-		        android:layout_weight="0.78"
-		        android:text="This will provide map of
+            <TextView
+                android:id="@+id/t2"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="13dp"
+                android:text="First Aid helps you to get the quick solution for the common diseases."
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#707883"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/textVie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:drawableLeft="@mipmap/icon_helpmap"
+                android:text=" Help map"
+                android:textColor="#707883"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/iew2"
+                android:layout_width="305dp"
+                android:layout_height="344dp"
+                android:layout_alignLeft="@+id/textView1"
+                android:layout_below="@+id/textView1"
+                android:layout_gravity="fill_horizontal"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="13dp"
+                android:layout_weight="0.78"
+                android:text="This will provide map of
 locations nearest :\n
 \t1.Private Hospitals\n
 \t2.Medicals\n(To use maps 1st
 time you should have Internet
 connection, Use GPS for accurate
 location.)"
-		        android:textAppearance="?android:attr/textAppearanceLarge"
-		        android:textColor="#707883"
-		        android:textSize="16dp" />
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#707883"
+                android:textSize="16dp" />
 
-		</LinearLayout>
+        </LinearLayout>
 
     </ScrollView>
 

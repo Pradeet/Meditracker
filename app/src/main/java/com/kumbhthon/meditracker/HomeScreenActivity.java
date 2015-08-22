@@ -20,6 +20,20 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.kumbhthon.meditracker.Adapter.DrawerAdapter;
+import com.kumbhthon.meditracker.Adapter.RowItem;
+import com.kumbhthon.meditracker.Fragments.About_us;
+import com.kumbhthon.meditracker.Fragments.Ex_frag;
+import com.kumbhthon.meditracker.Fragments.Feedback_Fragment;
+import com.kumbhthon.meditracker.Fragments.HelpCenterFragment;
+import com.kumbhthon.meditracker.Fragments.HelpMap_Fragment;
+import com.kumbhthon.meditracker.Fragments.New_emeregency;
+import com.kumbhthon.meditracker.Fragments.RateUs_Fragment;
+import com.kumbhthon.meditracker.Fragments.Settings_Fragment;
+import com.kumbhthon.meditracker.Fragments.Share_Fragment;
+import com.kumbhthon.meditracker.Fragments.UserGuideFragment;
+import com.kumbhthon.meditracker.Utils.LocService;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,8 +51,8 @@ public class HomeScreenActivity extends ActionBarActivity {
     private ActionBarDrawerToggle mDrawerToggle;
 
     private List<RowItem> rowItems;
-    private CustomAdapter adapter;
-    static Context context;
+    private DrawerAdapter adapter;
+    public static Context context;
 
     @SuppressLint("NewApi")
     @Override
@@ -66,7 +80,7 @@ public class HomeScreenActivity extends ActionBarActivity {
 
         menuIcons.recycle();
 
-        adapter = new CustomAdapter(getApplicationContext(), rowItems);
+        adapter = new DrawerAdapter(getApplicationContext(), rowItems);
 
         mDrawerList.setAdapter(adapter);
         mDrawerList.setOnItemClickListener(new SlideitemListener());
@@ -139,7 +153,7 @@ public class HomeScreenActivity extends ActionBarActivity {
                 fragment = new Settings_Fragment();
                 break;
             case 5:
-                fragment = new User_guid_Fragment();
+                fragment = new UserGuideFragment();
                 break;
             case 6:
                 fragment = new Feedback_Fragment();
