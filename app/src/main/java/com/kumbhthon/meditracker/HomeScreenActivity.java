@@ -19,20 +19,24 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.kumbhthon.meditracker.Adapter.DrawerAdapter;
 import com.kumbhthon.meditracker.Adapter.RowItem;
+import com.kumbhthon.meditracker.Analytics.ServerLoader;
 import com.kumbhthon.meditracker.Fragments.About_us;
-import com.kumbhthon.meditracker.Fragments.Ex_frag;
+import com.kumbhthon.meditracker.Fragments.FirstAidFragment;
 import com.kumbhthon.meditracker.Fragments.Feedback_Fragment;
-import com.kumbhthon.meditracker.Fragments.HelpCenterFragment;
-import com.kumbhthon.meditracker.Fragments.HelpMap_Fragment;
-import com.kumbhthon.meditracker.Fragments.New_emeregency;
+import com.kumbhthon.meditracker.Fragments.HospitalDirectoryFragment;
+import com.kumbhthon.meditracker.Fragments.HospitalLocatorFragment;
+import com.kumbhthon.meditracker.Fragments.EmergencyServiceFragment;
 import com.kumbhthon.meditracker.Fragments.RateUs_Fragment;
 import com.kumbhthon.meditracker.Fragments.Settings_Fragment;
 import com.kumbhthon.meditracker.Fragments.Share_Fragment;
 import com.kumbhthon.meditracker.Fragments.UserGuideFragment;
+import com.kumbhthon.meditracker.Utils.Constants;
 import com.kumbhthon.meditracker.Utils.LocService;
+import com.kumbhthon.meditracker.Utils.PrefManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,7 +56,8 @@ public class HomeScreenActivity extends ActionBarActivity {
 
     private List<RowItem> rowItems;
     private DrawerAdapter adapter;
-    public static Context context;
+
+    boolean onBackPressed = false;
 
     @SuppressLint("NewApi")
     @Override
@@ -60,7 +65,6 @@ public class HomeScreenActivity extends ActionBarActivity {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_screen);
-        context = HomeScreenActivity.this;
         mTitle = mDrawerTitle = getTitle();
 
         menutitles = getResources().getStringArray(R.array.titles);
@@ -122,6 +126,23 @@ public class HomeScreenActivity extends ActionBarActivity {
         Intent i = new Intent(HomeScreenActivity.this, LocService.class);
         startService(i);
 
+        if(PrefManager.getPrefs(getApplicationContext(), Constants.REGISTER_PENDING_BIT_PREF) || PrefManager.getPrefs(getApplicationContext(), Constants.ACTION_PENDING_BIT_PREF)){
+            ServerLoader serverLoader = new ServerLoader(getApplicationContext());
+            serverLoader.sendToServer();
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(!onBackPressed){
+            onBackPressed = true;
+            Toast.makeText(getApplicationContext(), "Click back to exit" ,Toast.LENGTH_SHORT).show();
+        }
+        else{
+            onBackPressed = false;
+            super.onBackPressed();
+        }
+
     }
 
     class SlideitemListener implements ListView.OnItemClickListener {
@@ -129,7 +150,6 @@ public class HomeScreenActivity extends ActionBarActivity {
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             updateDisplay(position);
         }
-
     }
 
     @SuppressLint("NewApi")
@@ -138,16 +158,16 @@ public class HomeScreenActivity extends ActionBarActivity {
         switch (position) {
 
             case 0:
-                fragment = new New_emeregency();
+                fragment = new EmergencyServiceFragment();
                 break;
             case 1:
-                fragment = new Ex_frag();
+                fragment = new FirstAidFragment();
                 break;
             case 2:
-                fragment = new HelpMap_Fragment();
+                fragment = new HospitalLocatorFragment();
                 break;
             case 3:
-                fragment = new HelpCenterFragment();
+                fragment = new HospitalDirectoryFragment();
                 break;
             case 4:
                 fragment = new Settings_Fragment();

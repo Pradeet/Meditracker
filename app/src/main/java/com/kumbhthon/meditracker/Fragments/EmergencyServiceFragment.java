@@ -1,6 +1,7 @@
 package com.kumbhthon.meditracker.Fragments;
 
 
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.annotation.SuppressLint;
@@ -13,13 +14,14 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.kumbhthon.meditracker.Analytics.ServerLoader;
 import com.kumbhthon.meditracker.R;
+import com.kumbhthon.meditracker.Utils.Constants;
 
 @SuppressLint("NewApi")
-public class New_emeregency extends Fragment //implements OnClickListener
-{
+public class EmergencyServiceFragment extends Fragment {
+
     Button b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15;
-    Context cntx;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -41,16 +43,17 @@ public class New_emeregency extends Fragment //implements OnClickListener
         b14 = (Button) rootView.findViewById(R.id.sitabai);
         b15 = (Button) rootView.findViewById(R.id.dr_vincurkar);
 
-        // btn_mp.setOnClickListener(getActivity());*/
-
         b1.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
 
-
-                Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
-                phoneIntent.setData(Uri.parse("tel:108"));
-                startActivity(phoneIntent);
+                String data = b1.getText().toString();
+                data = data + ":" + "108";
+                addCallAction(data);
+                new ServerLoader(getActivity().getApplicationContext()).sendToServer();
+//                Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
+//                phoneIntent.setData(Uri.parse("tel:108"));
+//                startActivity(phoneIntent);
             }
 
 
@@ -58,32 +61,33 @@ public class New_emeregency extends Fragment //implements OnClickListener
         b2.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
 
+                String data = b2.getText().toString();
+                data = data + ":" + "02532576106";
+                addCallAction(data);
                 Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
                 phoneIntent.setData(Uri.parse("tel:02532576106"));
                 startActivity(phoneIntent);
-                ;
-
-
             }
         });
 
         b3.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
 
-
+                String data = b3.getText().toString();
+                data = data + ":" + "102";
+                addCallAction(data);
                 Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
                 phoneIntent.setData(Uri.parse("tel:102"));
                 startActivity(phoneIntent);
-                ;
-
-
             }
         });
 
         b4.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
 
-
+                String data = b4.getText().toString();
+                data = data + ":" + "02532504926";
+                addCallAction(data);
                 Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
                 phoneIntent.setData(Uri.parse("tel:02532504926"));
                 startActivity(phoneIntent);
@@ -95,7 +99,9 @@ public class New_emeregency extends Fragment //implements OnClickListener
         b5.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
 
-
+                String data = b5.getText().toString();
+                data = data + ":" + "02532351045";
+                addCallAction(data);
                 Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
                 phoneIntent.setData(Uri.parse("tel:02532351045"));
                 startActivity(phoneIntent);
@@ -107,13 +113,12 @@ public class New_emeregency extends Fragment //implements OnClickListener
         b6.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
 
-
+                String data = b6.getText().toString();
+                data = data + ":" + "02532511313";
+                addCallAction(data);
                 Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
                 phoneIntent.setData(Uri.parse("tel:02532511313"));
                 startActivity(phoneIntent);
-                ;
-
-
             }
         });
 
@@ -121,20 +126,21 @@ public class New_emeregency extends Fragment //implements OnClickListener
         b7.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
 
-
+                String data = b7.getText().toString();
+                data = data + ":" + "02532463721";
+                addCallAction(data);
                 Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
                 phoneIntent.setData(Uri.parse("tel:02532463721"));
                 startActivity(phoneIntent);
-                ;
-
-
             }
         });
 
         b8.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
 
-
+                String data = b2.getText().toString();
+                data = data + ":" + "02532576106";
+                addCallAction(data);
                 Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
                 phoneIntent.setData(Uri.parse("tel:02532573525"));
                 startActivity(phoneIntent);
@@ -147,7 +153,9 @@ public class New_emeregency extends Fragment //implements OnClickListener
         b9.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
 
-
+                String data = b9.getText().toString();
+                data = data + ":" + "02532491377";
+                addCallAction(data);
                 Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
                 phoneIntent.setData(Uri.parse("tel:02532491377"));
                 startActivity(phoneIntent);
@@ -160,7 +168,9 @@ public class New_emeregency extends Fragment //implements OnClickListener
         b10.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
 
-
+                String data = b10.getText().toString();
+                data = data + ":" + "02532463414";
+                addCallAction(data);
                 Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
                 phoneIntent.setData(Uri.parse("tel:02532463414"));
                 startActivity(phoneIntent);
@@ -172,7 +182,9 @@ public class New_emeregency extends Fragment //implements OnClickListener
         b11.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
 
-
+                String data = b11.getText().toString();
+                data = data + ":" + "02532575516";
+                addCallAction(data);
                 Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
                 phoneIntent.setData(Uri.parse("tel:02532575516"));
                 startActivity(phoneIntent);
@@ -185,7 +197,9 @@ public class New_emeregency extends Fragment //implements OnClickListener
         b12.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
 
-
+                String data = b12.getText().toString();
+                data = data + ":" + "02532463442";
+                addCallAction(data);
                 Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
                 phoneIntent.setData(Uri.parse("tel:02532463442"));
                 startActivity(phoneIntent);
@@ -197,7 +211,9 @@ public class New_emeregency extends Fragment //implements OnClickListener
         b13.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
 
-
+                String data = b13.getText().toString();
+                data = data + ":" + "02532581111";
+                addCallAction(data);
                 Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
                 phoneIntent.setData(Uri.parse("tel:02532581111"));
                 startActivity(phoneIntent);
@@ -209,7 +225,9 @@ public class New_emeregency extends Fragment //implements OnClickListener
         b14.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
 
-
+                String data = b14.getText().toString();
+                data = data + ":" + "02532392491";
+                addCallAction(data);
                 Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
                 phoneIntent.setData(Uri.parse("tel:02532392491"));
                 startActivity(phoneIntent);
@@ -221,14 +239,20 @@ public class New_emeregency extends Fragment //implements OnClickListener
         b15.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
 
-
+                String data = b15.getText().toString();
+                data = data + ":" + "02532501021";
+                addCallAction(data);
                 Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
                 phoneIntent.setData(Uri.parse("tel:02532501021"));
                 startActivity(phoneIntent);
             }
         });
-
-
         return rootView;
+    }
+
+    private void addCallAction(String data) {
+        SharedPreferences prefs = getActivity().getSharedPreferences(Constants.USER_PREFERENCES, Context.MODE_PRIVATE);
+        new ServerLoader(getActivity().getApplicationContext())
+                .addActionDetails(prefs.getString(Constants.USER_MOBILE_NUM_1_PREF, "----"), Constants.TYPE_CALL, data);
     }
 }

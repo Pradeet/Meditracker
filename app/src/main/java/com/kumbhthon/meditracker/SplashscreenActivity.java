@@ -1,11 +1,13 @@
 package com.kumbhthon.meditracker;
 
 
+import android.content.Context;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+
+import com.kumbhthon.meditracker.Utils.Constants;
 
 /**
  * This class is used to display spalshscreen and navigate to
@@ -21,8 +23,8 @@ public class SplashscreenActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash);
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        bRegister_success = sharedPreferences.getBoolean("Register_success", false);
+        SharedPreferences sharedPreferences = getSharedPreferences(Constants.USER_PREFERENCES, Context.MODE_PRIVATE);
+        bRegister_success = sharedPreferences.getBoolean(Constants.RESGISTRATION_STATUS_PREF, false);
 
         Thread logoTimer = new Thread() {
             public void run() {

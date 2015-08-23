@@ -1,6 +1,7 @@
 package com.kumbhthon.meditracker.Fragments;
 
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.annotation.SuppressLint;
 import android.app.Fragment;
@@ -12,16 +13,17 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.kumbhthon.meditracker.Analytics.ServerLoader;
 import com.kumbhthon.meditracker.HomeScreenActivity;
 import com.kumbhthon.meditracker.MapActivity;
 import com.kumbhthon.meditracker.Medical_map;
 import com.kumbhthon.meditracker.R;
+import com.kumbhthon.meditracker.Utils.Constants;
 import com.kumbhthon.meditracker.Utils.GPS.GPSTracker;
 
 @SuppressLint("NewApi")
-public class HelpMap_Fragment extends Fragment {
+public class HospitalLocatorFragment extends Fragment {
     Button btn_mp1, btn_mp2;
-    Context cntx;
     GPSTracker gps;
 
     @Override
@@ -38,11 +40,12 @@ public class HelpMap_Fragment extends Fragment {
 
                 gps = new GPSTracker(getActivity());
                 if (gps.canGetLocation()) {
-
-                    Intent i = new Intent(HomeScreenActivity.context, MapActivity.class);
+                    sendLocatorAction("Hospital");
+                    Intent i = new Intent(getActivity(), MapActivity.class);
                     //Intent i=new Intent()
                     startActivity(i);
                 } else {
+
                     gps.showSettingsAlert();
                 }
 
@@ -52,7 +55,8 @@ public class HelpMap_Fragment extends Fragment {
             public void onClick(View v) {
                 gps = new GPSTracker(getActivity());
                 if (gps.canGetLocation()) {
-                    Intent i = new Intent(HomeScreenActivity.context, Medical_map.class);
+                    sendLocatorAction("Medical Store");
+                    Intent i = new Intent(getActivity(), Medical_map.class);
                     //Intent i=new Intent()
                     startActivity(i);
                 } else {
@@ -63,5 +67,11 @@ public class HelpMap_Fragment extends Fragment {
         });
 
         return rootView;
+    }
+
+    private void sendLocatorAction(String data) {
+        SharedPreferences pref = getActivity().getSharedPreferences(Constants.USER_PREFERENCES, Context.MODE_PRIVATE);
+        new ServerLoader(getActivity().getApplicationContext())
+                .addActionDetails(pref.getString(Constants.USER_MOBILE_NUM_1_PREF, null), "Location", data);
     }
 }

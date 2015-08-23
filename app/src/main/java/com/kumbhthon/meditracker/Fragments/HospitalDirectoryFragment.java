@@ -16,7 +16,7 @@ import com.kumbhthon.meditracker.MyHelpAdapter;
 import com.kumbhthon.meditracker.R;
 
 @SuppressLint("NewApi")
-public class HelpCenterFragment extends Fragment implements OnGroupExpandListener, OnItemClickListener {
+public class HospitalDirectoryFragment extends Fragment implements OnGroupExpandListener, OnItemClickListener {
     ExpandableListView listView;
     static int LastExpandedPostion = -1;
     Context cntx;

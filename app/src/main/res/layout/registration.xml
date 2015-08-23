@@ -3,15 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="3" >
-    
+    android:weightSum="3">
+
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="33dp"
-       
+
         android:gravity="center"
         android:text="Registration"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -21,36 +21,36 @@
     <ScrollView
         android:id="@+id/scrollView1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical" >
-            <EditText
-         android:id="@+id/editTxt_Name"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         
-         android:layout_marginLeft="10dp"
-         android:layout_marginRight="10dp"
-         android:layout_marginTop="40dp"
-          android:textColorHint="#707883"
-         android:ems="10"
-         android:gravity="center_vertical"
-         android:hint="Your Name"
-         android:inputType="textCapWords|textPersonName"
-         >
+            android:orientation="vertical">
 
-      <requestFocus />
-      </EditText>
+            <EditText
+                android:id="@+id/editTxt_Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="40dp"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:hint="Your Name"
+                android:inputType="textCapWords|textPersonName"
+                android:textColorHint="#707883">
+
+                <requestFocus />
+            </EditText>
 
             <EditText
                 android:id="@+id/editTxt_no1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                   android:layout_marginRight="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_marginTop="57dp"
                 android:ems="10"
                 android:gravity="left|center"
@@ -58,38 +58,35 @@
                 android:inputType="number"
                 android:textColorHint="#707883" />
 
-    <EditText
-        android:id="@+id/editTxt_no2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-       
-        android:layout_marginLeft="10dp"
-           android:layout_marginRight="10dp"
-        android:layout_marginTop="57dp"
-         android:textColorHint="#707883"
-        android:ems="10"
-        android:hint="Parents or Friend Mo. Number"
-        android:inputType="number"
-        >
-      
-    </EditText>
+            <EditText
+                android:id="@+id/editTxt_no2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 
-     <Button
-         android:id="@+id/btn_submit"
-         android:layout_width="299dp"
-         android:layout_height="wrap_content"
-         android:layout_alignLeft="@+id/editTxt_no2"
-         android:layout_alignParentBottom="true"
-         android:layout_alignRight="@+id/editTxt_no2"
-         android:layout_gravity="center_horizontal"
-         android:layout_marginTop="54dp"
-android:background="@drawable/button"
-         android:text="@string/Submit"
-         android:textSize="16sp"
-         android:textColor="#FFFFFF" />
-    
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="57dp"
+                android:ems="10"
+                android:hint="Parents or Friend Mo. Number"
+                android:inputType="number"
+                android:textColorHint="#707883" />
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="299dp"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/editTxt_no2"
+                android:layout_alignParentBottom="true"
+                android:layout_alignRight="@+id/editTxt_no2"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="54dp"
+                android:background="@drawable/button"
+                android:text="@string/Submit"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
         </LinearLayout>
     </ScrollView>
 
-     
-    </LinearLayout>
+
+</LinearLayout>
