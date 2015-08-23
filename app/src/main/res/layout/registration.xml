@@ -54,7 +54,7 @@
                 android:layout_marginTop="57dp"
                 android:ems="10"
                 android:gravity="left|center"
-                android:hint="Your Current Number"
+                android:hint="Your Current Number (10 digits)"
                 android:inputType="number"
                 android:textColorHint="#707883" />
 
@@ -62,12 +62,11 @@
                 android:id="@+id/editTxt_no2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="57dp"
                 android:ems="10"
-                android:hint="Parents or Friend Mo. Number"
+                android:hint="Parents/Friend Mobile Number"
                 android:inputType="number"
                 android:textColorHint="#707883" />
 

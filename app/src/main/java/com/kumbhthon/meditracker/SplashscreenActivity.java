@@ -34,7 +34,6 @@ public class SplashscreenActivity extends Activity {
                         sleep(100);
                         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                         logoTimer = logoTimer + 100;
-
                     }
                     ;
                     if (bRegister_success) {
@@ -43,7 +42,6 @@ public class SplashscreenActivity extends Activity {
                     } else {
                         Intent i = new Intent(getBaseContext(), RegistrationActivity.class);
                         startActivity(i);
-
                     }
                 } catch (InterruptedException e) {
                 } finally {

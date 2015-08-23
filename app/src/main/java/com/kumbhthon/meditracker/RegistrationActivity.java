@@ -1,12 +1,12 @@
 package com.kumbhthon.meditracker;
 
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.telephony.TelephonyManager;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -33,8 +33,11 @@ public class RegistrationActivity extends ActionBarActivity implements OnClickLi
         t3 = (EditText) findViewById(R.id.editTxt_no2);
         btn1 = (Button) findViewById(R.id.btn_submit);
         btn1.setOnClickListener(this);
-    }
 
+        TelephonyManager tMgr = (TelephonyManager) getApplicationContext().getSystemService(Context.TELEPHONY_SERVICE);
+        String mPhoneNumber = tMgr.getLine1Number();
+        t2.setText(mPhoneNumber);
+    }
 
     public void onClick(View vw) {
         if (vw == btn1) {
@@ -79,7 +82,7 @@ public class RegistrationActivity extends ActionBarActivity implements OnClickLi
         Name = t1.getText().toString();
         Number1 = t2.getText().toString();
         Number2 = t3.getText().toString();
-        if (Name.length() <= 0) {
+        if (Name.length() <= 2) {
             t1.setError("Name is mandatory");
             return false;
         } else if (Number1.length() <= 0) {
@@ -97,6 +100,5 @@ public class RegistrationActivity extends ActionBarActivity implements OnClickLi
         } else {
             return true;
         }
-
     }
 }
