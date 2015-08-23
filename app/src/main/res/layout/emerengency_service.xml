@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff"
-    android:gravity="center" >
+    android:gravity="center">
 
     <TextView
         android:id="@+id/textView1"
@@ -43,5 +43,5 @@
         android:textColor="#00008B"
         android:textSize="20sp"
         android:textStyle="bold" />
-      
+
 </RelativeLayout>

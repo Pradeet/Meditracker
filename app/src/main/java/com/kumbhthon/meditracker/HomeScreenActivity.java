@@ -3,14 +3,15 @@ package com.kumbhthon.meditracker;
 import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -25,11 +26,11 @@ import com.kumbhthon.meditracker.Adapter.DrawerAdapter;
 import com.kumbhthon.meditracker.Adapter.RowItem;
 import com.kumbhthon.meditracker.Analytics.ServerLoader;
 import com.kumbhthon.meditracker.Fragments.About_us;
-import com.kumbhthon.meditracker.Fragments.FirstAidFragment;
+import com.kumbhthon.meditracker.Fragments.Emeregency_service;
 import com.kumbhthon.meditracker.Fragments.Feedback_Fragment;
+import com.kumbhthon.meditracker.Fragments.FirstAidFragment;
 import com.kumbhthon.meditracker.Fragments.HospitalDirectoryFragment;
 import com.kumbhthon.meditracker.Fragments.HospitalLocatorFragment;
-import com.kumbhthon.meditracker.Fragments.EmergencyServiceFragment;
 import com.kumbhthon.meditracker.Fragments.RateUs_Fragment;
 import com.kumbhthon.meditracker.Fragments.Settings_Fragment;
 import com.kumbhthon.meditracker.Fragments.Share_Fragment;
@@ -73,11 +74,9 @@ public class HomeScreenActivity extends ActionBarActivity {
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.slider_list);
 
-
         rowItems = new ArrayList<RowItem>();
 
         for (int i = 0; i < menutitles.length; i++) {
-
             RowItem items = new RowItem(menutitles[i], menuIcons.getResourceId(i, -1));
             rowItems.add(items);
         }
@@ -93,11 +92,11 @@ public class HomeScreenActivity extends ActionBarActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
-        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
-                R.mipmap.ic_drawer, R.string.app_name, R.string.app_name) {
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.drawable.ic_drawer, R.string.app_name, R.string.app_name) {
             @SuppressLint("NewApi")
 
             public void onDrawerClosed(View view) {
+                super.onDrawerClosed(view);
                 getSupportActionBar().setTitle(mTitle);
                 // calling onPrepareOptionsMenu() to show action bar icons
                 invalidateOptionsMenu();
@@ -106,6 +105,7 @@ public class HomeScreenActivity extends ActionBarActivity {
 
             @SuppressLint("NewApi")
             public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
                 getSupportActionBar().setTitle(mDrawerTitle);
 
                 // calling onPrepareOptionsMenu() to hide action bar icons
@@ -114,7 +114,6 @@ public class HomeScreenActivity extends ActionBarActivity {
 
 
         };
-
         mDrawerLayout.setDrawerListener(mDrawerToggle);
 
         if (savedInstanceState == null) {
@@ -145,6 +144,8 @@ public class HomeScreenActivity extends ActionBarActivity {
 
     }
 
+
+
     class SlideitemListener implements ListView.OnItemClickListener {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -158,7 +159,7 @@ public class HomeScreenActivity extends ActionBarActivity {
         switch (position) {
 
             case 0:
-                fragment = new EmergencyServiceFragment();
+                fragment = new Emeregency_service();
                 break;
             case 1:
                 fragment = new FirstAidFragment();
@@ -214,12 +215,9 @@ public class HomeScreenActivity extends ActionBarActivity {
         mTitle = title;
         getSupportActionBar().setTitle(mTitle);
 
-        ActionBar bar = getSupportActionBar();
+        getSupportActionBar().setIcon(new ColorDrawable(getResources().getColor(android.R.color.transparent)));
 
-        getSupportActionBar().setIcon(
-                new ColorDrawable(getResources().getColor(android.R.color.transparent)));
-
-        bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#e65e2f")));
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#e65e2f")));
     }
 
 
@@ -231,8 +229,6 @@ public class HomeScreenActivity extends ActionBarActivity {
         }
         // Handle action bar actions click
         switch (item.getItemId()) {
-
-
             default:
                 return super.onOptionsItemSelected(item);
         }

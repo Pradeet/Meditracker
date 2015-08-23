@@ -17,10 +17,12 @@ import com.kumbhthon.meditracker.R;
 public class DrawerAdapter extends BaseAdapter {
     Context context;
     List<RowItem> rowItem;
+    LayoutInflater mInflater;
 
     public DrawerAdapter(Context context, List<RowItem> rowItem) {
         this.context = context;
         this.rowItem = rowItem;
+        mInflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
     }
 
 
@@ -28,8 +30,6 @@ public class DrawerAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
 
         if (convertView == null) {
-            LayoutInflater mInflater = (LayoutInflater) context
-                    .getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
             convertView = mInflater.inflate(R.layout.list_item, null);
         }
 
@@ -37,10 +37,7 @@ public class DrawerAdapter extends BaseAdapter {
         TextView txtTitle = (TextView) convertView.findViewById(R.id.title);
 
         RowItem row_pos = rowItem.get(position);
-        // setting the image resource and title
         imgIcon.setImageResource(row_pos.getIcon());
-        imgIcon.setPadding(0, 21, 0, 0);
-
         txtTitle.setText(row_pos.getTitle());
 
         return convertView;

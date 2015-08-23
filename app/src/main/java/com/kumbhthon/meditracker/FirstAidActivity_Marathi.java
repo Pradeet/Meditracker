@@ -25,10 +25,6 @@ public class FirstAidActivity_Marathi extends Activity implements OnGroupExpandL
         listView.setOnGroupExpandListener(this);
         
     }
-    
-  
-   
-   
    
     public void onGroupExpand(int groupPosition)
     {
