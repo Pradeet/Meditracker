@@ -1,7 +1,5 @@
 package com.kumbhthon.meditracker;
 
-//import android.R;
-
 import android.content.Context;
 import android.location.Criteria;
 import android.location.Location;
@@ -20,9 +18,12 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+
 public class Medical_map extends FragmentActivity {
     // Google Map
     private GoogleMap googleMap;
+    private WebView programWebView;
+
 
     //Medical Arrays
     private double latt2[] = {19.9652014,
@@ -189,6 +190,7 @@ public class Medical_map extends FragmentActivity {
             19.9970723,
             19.996782,
 
+
     };
     private double lon2[] = {73.7533984,
             73.7536474,
@@ -348,6 +350,7 @@ public class Medical_map extends FragmentActivity {
             73.801986,
             73.7804837,
             73.7797618,
+
     };
 
 
@@ -517,6 +520,7 @@ public class Medical_map extends FragmentActivity {
             "Sarswati medical",
             "Prabhuram medical",
             "Rajdut medical",
+
     };
     private String add[] = {"Ambad-Trimurti chowk link road, Indraprastha colony, Nashik, Maharashtra 422010",
             "Ambad-Trimurti chowk link road, Indraprastha colony, Nashik, Maharashtra 422010",
@@ -695,7 +699,7 @@ public class Medical_map extends FragmentActivity {
             "Trimbak road, police staff colony, nashik, maharashtra 422002",
             "Trimbak road, matoshree nagar, nashik, maharashtra 422002",
     };
-   /* private String cont[] ={"0253 - 2510002",
+   /* private String cont[] ={" 0253 - 2510002",
             "0253 - 2532310",
     		"0253 - 2319091, 2598503",
     		"0253 - 2393915",
@@ -728,7 +732,7 @@ public class Medical_map extends FragmentActivity {
     		"0253 - 2240382",
     		"0253 - 2576942",
     		 "0253 - 2257888",
-    		"0253-2315480, 2315580",
+    		"0253 - 2315480, 2315580",
     		"(253)-2313075",
     		"9822425591",
     		"0253-2491687",
@@ -759,7 +763,7 @@ public class Medical_map extends FragmentActivity {
             googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
             LatLng latLng = new LatLng(19.998176, 73.772719);
 
-            // Show the current location in Google Map        
+            // Show the current location in Google Map
             googleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
             googleMap.animateCamera(CameraUpdateFactory.zoomTo(17));
             googleMap.setMyLocationEnabled(true);
@@ -801,6 +805,7 @@ public class Medical_map extends FragmentActivity {
             MarkerOptions marker2 = new MarkerOptions().position(new LatLng(latt2[i], lon2[i])).title("" + nameMed[i]);
             //
             marker2.icon(BitmapDescriptorFactory.fromResource(R.mipmap.pill));
+
 
             // adding marker
             googleMap.addMarker(marker2);

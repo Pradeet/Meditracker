@@ -12,7 +12,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnGroupExpandListener;
 
-import com.kumbhthon.meditracker.MyHelpAdapter;
+import com.kumbhthon.meditracker.Adapter.MyHelpAdapter;
 import com.kumbhthon.meditracker.R;
 
 @SuppressLint("NewApi")

@@ -113,49 +113,41 @@ public class FirstAidAdapter_english extends BaseExpandableListAdapter {
     };
 
     public FirstAidAdapter_english(Context context) {
-        // TODO Auto-generated constructor stub
         this.context = context;
     }
 
     @Override
     public int getGroupCount() {
-        // TODO Auto-generated method stub
         return parentlist.length;
     }
 
     @Override
     public int getChildrenCount(int groupPosition) {
-        // TODO Auto-generated method stub
         return childlist[groupPosition].length;
     }
 
     @Override
     public Object getGroup(int groupPosition) {
-        // TODO Auto-generated method stub
         return groupPosition;
     }
 
     @Override
     public Object getChild(int groupPosition, int childPosition) {
-        // TODO Auto-generated method stub
         return null;
     }
 
     @Override
     public long getGroupId(int groupPosition) {
-        // TODO Auto-generated method stub
         return groupPosition;
     }
 
     @Override
     public long getChildId(int groupPosition, int childPosition) {
-        // TODO Auto-generated method stub
         return 0;
     }
 
     @Override
     public boolean hasStableIds() {
-        // TODO Auto-generated method stub
         return false;
     }
 

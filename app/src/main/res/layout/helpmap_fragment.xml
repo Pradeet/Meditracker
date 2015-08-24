@@ -7,7 +7,7 @@
     android:gravity="center" >
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/hospitalButton"
         android:layout_width="250dp"
         android:layout_height="80dp"
         android:layout_centerInParent="true"
@@ -20,17 +20,32 @@
         android:textSize="25dp" />
 
     <Button
-        android:id="@+id/Button01"
+        android:id="@+id/MedicalStoreButton"
         android:layout_width="250dp"
         android:layout_height="80dp"
-        android:layout_alignLeft="@+id/button1"
-        android:layout_below="@+id/button1"
+        android:layout_alignLeft="@+id/hospitalButton"
+        android:layout_below="@+id/hospitalButton"
         android:layout_marginTop="27dp"
         android:background="@drawable/button"
         android:drawableLeft="@mipmap/medical_1"
         android:paddingLeft="20dp"
         android:drawablePadding="7dp"
         android:text="Medical Store"
+        android:textColor="#ffffff"
+        android:textSize="25dp" />
+
+    <Button
+        android:id="@+id/kumbhHospitalButton"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:layout_alignLeft="@+id/MedicalStoreButton"
+        android:layout_below="@+id/MedicalStoreButton"
+        android:layout_marginTop="27dp"
+        android:background="@drawable/button"
+        android:drawableLeft="@mipmap/hospital_1"
+        android:paddingLeft="20dp"
+        android:drawablePadding="7dp"
+        android:text="Kumbh Hospital"
         android:textColor="#ffffff"
         android:textSize="25dp" />
 

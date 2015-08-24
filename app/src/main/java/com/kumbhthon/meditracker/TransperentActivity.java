@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
 import android.telephony.SmsManager;
+import android.util.Log;
 
 import com.kumbhthon.meditracker.Utils.SharedPreferenceManager;
 
@@ -19,7 +20,7 @@ public class TransperentActivity extends ActionBarActivity {
 
     SharedPreferences sharedPrefs;
     String lat, lon, add, pinCode;
-    String no1, no2, hisNum, name;
+    String no2 = "108", hisNum, name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +41,6 @@ public class TransperentActivity extends ActionBarActivity {
 
         message = "Need Help...";
 
-        System.out.println("no1" + no1);
         System.out.println("Pin Code" + pinCode);
 
         mssgPhone = "";
@@ -54,7 +54,6 @@ public class TransperentActivity extends ActionBarActivity {
             }
         }
 
-        callHelp(String.valueOf(no1));
         callHelp(String.valueOf(no2));
 
         makeCallHelp(no2);
@@ -79,6 +78,7 @@ public class TransperentActivity extends ActionBarActivity {
                 if (!number.equals("")) {
                     SmsManager sms = SmsManager.getDefault();
                     ArrayList<String> parts = sms.divideMessage(locationString);
+                    Log.d("Debug", locationString);
                     sms.sendMultipartTextMessage(number, null, parts, null, null);
 
 

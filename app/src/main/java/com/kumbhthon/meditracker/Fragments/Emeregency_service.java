@@ -10,19 +10,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsListView;
-import android.widget.Adapter;
-import android.widget.AdapterView;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.kumbhthon.meditracker.Adapter.DrawerAdapter;
 import com.kumbhthon.meditracker.Analytics.ServerLoader;
 import com.kumbhthon.meditracker.R;
 import com.kumbhthon.meditracker.Utils.Constants;
-
-import java.util.ArrayList;
 
 @SuppressLint("NewApi")
 public class Emeregency_service extends Fragment {
@@ -38,7 +31,7 @@ public class Emeregency_service extends Fragment {
 
         final String[] emergency_numbers_array = {"108", "Government District Hospital", "Nashik MunicipalCorporation", "Redcros Mahatma Gandhiroad", "E.S.I. Hopsital,Satpur", "Shivsena Mhahanagar", "IPS Note Press,Nashik Road", "Rajdut Mitramandal", "Cantonment Board,Devlali Camp", "Jayram Hospital, Nashik Road", "Aparn Trust", "Bahujan yua Sanghatna,Nashk Road", "Vision Hospital", "Sitabai More Hospital,Cidco", "Dr. Vinchurkar,Trimbak Naka"};
 
-        btn_mp1 = (ImageButton) rootView.findViewById(R.id.button1);
+        btn_mp1 = (ImageButton) rootView.findViewById(R.id.hospitalButton);
         btn_mp1.setOnClickListener(new View.OnClickListener() {
 
             @Override

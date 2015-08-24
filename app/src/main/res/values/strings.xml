@@ -2,11 +2,11 @@
 <resources>
 
     <string name="app_name">MediTracker</string>
-  
+
     <string name="Hindi">Hindi</string>
     <string name="English">English</string>
     <string name="imgdesc">imgdesc</string>
-   
+
     <string name="title_activity_registration">Registration Activity</string>
     <string name="title_activity_home_screen">MediTracker</string>
     <string name="Submit">Submit</string>
@@ -14,7 +14,7 @@
     <color name="textbody">#EE0000</color>
 
     <array name="icons">
-         <item>@mipmap/ic_action_ambulance_copy</item>
+        <item>@mipmap/ic_action_ambulance_copy</item>
         <item>@mipmap/icon_firstaid</item>
         <item>@mipmap/icon_helpmap</item>
         <item>@mipmap/icon_helpcenter</item>
@@ -23,27 +23,20 @@
         <item>@mipmap/icon_feedback</item>
         <item>@mipmap/icon_share</item>
         <item>@mipmap/icon_rateus</item>
-        
         <item>@drawable/about_us</item>
-        
     </array>
 
     <string-array name="titles">
-    
-       <item>Emergency Service</item>
+        <item>Emergency Service</item>
         <item>First Aid</item>
         <item>Hospital Locator</item>
         <item>Hospital Directory</item>
         <item>Settings</item>
         <item>User Guide</item>
-       
         <item>Feedback</item>
         <item>Share</item>
         <item>Rate us</item>
-         <item>About us</item>
-         
-          
-          
+        <item>About us</item>
     </string-array>
 
     <string name="title_activity_first_aid__fragment">MediTracker</string>
@@ -59,6 +52,5 @@
     <string name="title_activity_h__map">Hospital</string>
     <string name="tt">When we need medical emergencies “Help widget” will help you  with single touch , it will give information                        about injured person and its location to the registered numbers and at that instant call is made to the nearest hospital or  Clinic which is provided by Government.</string>
     <string name="action_settings">Settings</string>
-
 
 </resources>

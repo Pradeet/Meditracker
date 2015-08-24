@@ -14,24 +14,25 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.kumbhthon.meditracker.Analytics.ServerLoader;
-import com.kumbhthon.meditracker.HomeScreenActivity;
 import com.kumbhthon.meditracker.MapActivity;
 import com.kumbhthon.meditracker.Medical_map;
 import com.kumbhthon.meditracker.R;
+import com.kumbhthon.meditracker.Route_wise_hospital;
 import com.kumbhthon.meditracker.Utils.Constants;
 import com.kumbhthon.meditracker.Utils.GPS.GPSTracker;
 
 @SuppressLint("NewApi")
 public class HospitalLocatorFragment extends Fragment {
-    Button btn_mp1, btn_mp2;
+    Button btn_mp1, btn_mp2, btn_mp3;
     GPSTracker gps;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.helpmap_fragment, container, false);
         //cntx=getActivity();
-        btn_mp1 = (Button) rootView.findViewById(R.id.button1);
-        btn_mp2 = (Button) rootView.findViewById(R.id.Button01);
+        btn_mp1 = (Button) rootView.findViewById(R.id.hospitalButton);
+        btn_mp2 = (Button) rootView.findViewById(R.id.MedicalStoreButton);
+        btn_mp3 = (Button) rootView.findViewById(R.id.kumbhHospitalButton);
         // btn_mp.setOnClickListener(getActivity());*/
 
         btn_mp1.setOnClickListener(new View.OnClickListener() {
@@ -42,7 +43,6 @@ public class HospitalLocatorFragment extends Fragment {
                 if (gps.canGetLocation()) {
                     sendLocatorAction("Hospital");
                     Intent i = new Intent(getActivity(), MapActivity.class);
-                    //Intent i=new Intent()
                     startActivity(i);
                 } else {
 
@@ -57,7 +57,6 @@ public class HospitalLocatorFragment extends Fragment {
                 if (gps.canGetLocation()) {
                     sendLocatorAction("Medical Store");
                     Intent i = new Intent(getActivity(), Medical_map.class);
-                    //Intent i=new Intent()
                     startActivity(i);
                 } else {
                     gps.showSettingsAlert();
@@ -65,7 +64,19 @@ public class HospitalLocatorFragment extends Fragment {
 
             }
         });
-
+        btn_mp3.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gps = new GPSTracker(getActivity());
+                if (gps.canGetLocation()) {
+                    sendLocatorAction("Kumbh Store");
+                    Intent i = new Intent(getActivity(), Route_wise_hospital.class);
+                    startActivity(i);
+                } else {
+                    gps.showSettingsAlert();
+                }
+            }
+        });
         return rootView;
     }
 

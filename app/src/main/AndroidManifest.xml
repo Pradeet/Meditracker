@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.kumbhthon.meditracker"
-    android:installLocation="auto"
-    android:versionCode="6"
-    android:versionName="1.5">
-
-    <uses-sdk
-        android:minSdkVersion="7"
-        android:targetSdkVersion="22" />
+    android:installLocation="auto" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
@@ -76,7 +70,8 @@
         </activity>
         <activity
             android:name=".FirstAidActivity_English"
-            android:label="@string/title_activity_first_aid__fragment">
+            android:label="@string/title_activity_first_aid__fragment"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
 
         </activity>
         <activity
@@ -87,6 +82,12 @@
 
         <activity
             android:name="com.kumbhthon.meditracker.Medical_map"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AppCompat.Light">
+
+        </activity>
+        <activity
+            android:name="com.kumbhthon.meditracker.Route_wise_hospital"
             android:label="@string/app_name"
             android:theme="@style/Theme.AppCompat.Light">
 
@@ -110,7 +111,7 @@
             android:label="@string/app_name"
             android:permission="com.kumbhthon.permission.Test"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="com.example.emergencyhelp.MainWidget.ACTION_SMS_CALL" />
             </intent-filter>
