@@ -12,14 +12,11 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.SEND_SMS" />
 
-
     <!-- Required to show current location -->
-
 
     <permission
         android:name="com.kumbhthon.meditracker.activity.permission.MAPS_RECEIVE"
@@ -38,20 +35,19 @@
         android:name="com.google.android.gms.version"
         android:value="4452000" />
 
-
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true" />
 
     <application
+        android:name=".Analytics.AppController"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:name=".Analytics.AppController"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
         <activity
-            android:name="com.kumbhthon.meditracker.SplashscreenActivity"
-            android:label="@string/app_name">
+            android:name=".SplashscreenActivity"
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -59,59 +55,48 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.kumbhthon.meditracker.RegistrationActivity"
-            android:label="@string/title_activity_registration">
-
+            android:name=".RegistrationActivity"
+            android:label="@string/title_activity_registration" >
         </activity>
         <activity
-            android:name="com.kumbhthon.meditracker.HomeScreenActivity"
-            android:label="@string/title_activity_home_screen">
-
+            android:name=".HomeScreenActivity"
+            android:label="@string/title_activity_home_screen" >
         </activity>
         <activity
             android:name=".FirstAidActivity_English"
             android:label="@string/title_activity_first_aid__fragment"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
-
+            android:theme="@style/Theme.AppCompat.NoActionBar" >
         </activity>
         <activity
-            android:name="com.kumbhthon.meditracker.MapActivity"
-            android:label="@string/title_activity_h__map">
-
+            android:name=".MapActivity"
+            android:label="@string/title_activity_h__map" >
         </activity>
-
         <activity
-            android:name="com.kumbhthon.meditracker.Medical_map"
+            android:name=".Medical_map"
             android:label="@string/app_name"
-            android:theme="@style/Theme.AppCompat.Light">
-
+            android:theme="@style/Theme.AppCompat.Light" >
         </activity>
         <activity
-            android:name="com.kumbhthon.meditracker.Route_wise_hospital"
+            android:name=".Route_wise_hospital"
             android:label="@string/app_name"
-            android:theme="@style/Theme.AppCompat.Light">
-
+            android:theme="@style/Theme.AppCompat.Light" >
         </activity>
         <activity
             android:name=".FirstAidActivity_Hindi"
             android:label="@string/app_name"
-            android:theme="@style/Theme.AppCompat.Light">
-
+            android:theme="@style/Theme.AppCompat.Light" >
         </activity>
         <activity
             android:name=".FirstAidActivity_Marathi"
             android:label="@string/app_name"
-            android:theme="@style/Theme.AppCompat.Light">
-
+            android:theme="@style/Theme.AppCompat.Light" >
         </activity>
-
-
         <activity
             android:name=".TransperentActivity"
             android:label="@string/app_name"
             android:permission="com.kumbhthon.permission.Test"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
+            android:theme="@style/Theme.AppCompat.NoActionBar" >
             <intent-filter>
                 <action android:name="com.example.emergencyhelp.MainWidget.ACTION_SMS_CALL" />
             </intent-filter>
@@ -120,7 +105,7 @@
         <receiver
             android:name=".MainWidget"
             android:label="@string/app_name"
-            android:permission="com.kumbhthon.permission.Test">
+            android:permission="com.kumbhthon.permission.Test" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
                 <action android:name="com.kumbhthon.meditracker.MainWidget.ACTION_RECORDER" />
@@ -140,27 +125,32 @@
 
         <receiver
             android:name=".Utils.TickReceiver"
-            android:enabled="false">
+            android:enabled="false" >
             <intent-filter>
                 <action android:name="android.intent.action.TIME_TICK" />
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <!--    <action android:name="android.intent.action.ACTION_POWER_CONNECTED" >
+                <!--
+                   <action android:name="android.intent.action.ACTION_POWER_CONNECTED" >
                    </action>
                    <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" >
                    </action>
                    <action android:name="android.intent.action.WALLPAPER_CHANGED" />
-                   <action android:name="android.intent.action.UID_REMOVED" /> -->
+                   <action android:name="android.intent.action.UID_REMOVED" />
+                -->
             </intent-filter>
         </receiver>
-
 
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyDnJlZhcK-9ogwRJtxJaoRwiD-7-6GYPmk" />
+
+        <activity
+            android:name=".NewActivity"
+            android:label="@string/title_activity_new" >
+        </activity>
     </application>
 
 </manifest>

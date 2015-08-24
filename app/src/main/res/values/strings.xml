@@ -52,5 +52,8 @@
     <string name="title_activity_h__map">Hospital</string>
     <string name="tt">When we need medical emergencies “Help widget” will help you  with single touch , it will give information                        about injured person and its location to the registered numbers and at that instant call is made to the nearest hospital or  Clinic which is provided by Government.</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_new">NewActivity</string>
+
+    <string name="hello_world">Hello world!</string>
 
 </resources>

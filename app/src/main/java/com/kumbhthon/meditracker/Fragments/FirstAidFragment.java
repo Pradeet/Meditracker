@@ -64,6 +64,6 @@ public class FirstAidFragment extends Fragment {
     private void sendFirstAidAction(String data){
         SharedPreferences prefs = getActivity().getSharedPreferences(Constants.USER_PREFERENCES, Context.MODE_PRIVATE);
         new ServerLoader(getActivity().getApplicationContext())
-                .addActionDetails(prefs.getString(Constants.USER_MOBILE_NUM_1_PREF, null), Constants.TYPE_FIRSTAID, data);
+                .addActionDetails(prefs.getString(Constants.USER_MOBILE_NUM_1_PREF, null), Constants.TYPE_FIRSTAID, data, "");
     }
 }

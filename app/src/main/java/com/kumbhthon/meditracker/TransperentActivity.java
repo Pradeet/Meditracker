@@ -65,7 +65,7 @@ public class TransperentActivity extends ActionBarActivity {
                 locationString = message +
                         "\nMy Name : " + name + "(" + hisNum + ")" +
                         "\nLatitude : " + lat +
-                        "\nLongitude: " + lon +
+                        "\naction_Longitude: " + lon +
                         "\nAddress : " + add +
                         "\nPin: " + pinCode +
                         "\nMap link: http://maps.google.com/maps?f=q&geocode=&ll=" + lat + "," + lon +

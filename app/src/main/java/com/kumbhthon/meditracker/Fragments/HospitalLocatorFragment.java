@@ -83,6 +83,6 @@ public class HospitalLocatorFragment extends Fragment {
     private void sendLocatorAction(String data) {
         SharedPreferences pref = getActivity().getSharedPreferences(Constants.USER_PREFERENCES, Context.MODE_PRIVATE);
         new ServerLoader(getActivity().getApplicationContext())
-                .addActionDetails(pref.getString(Constants.USER_MOBILE_NUM_1_PREF, null), "Location", data);
+                .addActionDetails(pref.getString(Constants.USER_MOBILE_NUM_1_PREF, null), Constants.TYPE_LOCATOR, data, "n/a");
     }
 }

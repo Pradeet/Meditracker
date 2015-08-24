@@ -87,6 +87,8 @@ public class VolleyCommands {
             params.put("a_type", details.action_Type);
             params.put("a_timestamp", details.action_Time);
             params.put("a_metadata", details.action_data);
+            params.put("a_longitude", details.action_Longitude);
+            params.put("a_latitude", details.action_Latitude);
             jsonArray.put(new JSONObject(params));
             params.clear();
         }

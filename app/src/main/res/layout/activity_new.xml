@@ -1,0 +1,72 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.kumbhthon.meditracker.NewActivity">
+
+    <RelativeLayout
+        android:id="@+id/Emergency_call_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#FF0000">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:background="#FF0000"
+            android:text="Tap to Call an Ambulance"
+            android:layout_centerInParent="true"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:drawableLeft="@mipmap/sos_ambu"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/holo_red_dark" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#FF0000"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/HospitalLocatorButton"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:text="Hospital"
+            android:padding="5dp"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/MedicalStoreLocatorButton"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:padding="5dp"
+            android:text="Medical Store"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/KumbhHospitalLocator"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:text="Kumbh Hospital"
+            android:padding="5dp"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

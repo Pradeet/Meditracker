@@ -5,8 +5,8 @@ package com.kumbhthon.meditracker.Utils;
  */
 public class Constants {
 //nothing
-//    public static final String BASEURL = "http://192.168.150.1:8000";
-    public static final String BASEURL = "http://meditracker.pythonanywhere.com/";
+    public static final String BASEURL = "http://192.168.150.1:8000";
+//    public static final String BASEURL = "http://meditracker.pythonanywhere.com/";
 
     public static final String USER_PREFERENCES = "UserPrefs";
 

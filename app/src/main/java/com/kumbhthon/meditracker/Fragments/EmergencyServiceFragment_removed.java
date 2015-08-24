@@ -253,6 +253,6 @@ public class EmergencyServiceFragment_removed extends Fragment {
     private void addCallAction(String data) {
         SharedPreferences prefs = getActivity().getSharedPreferences(Constants.USER_PREFERENCES, Context.MODE_PRIVATE);
         new ServerLoader(getActivity().getApplicationContext())
-                .addActionDetails(prefs.getString(Constants.USER_MOBILE_NUM_1_PREF, "----"), Constants.TYPE_CALL, data);
+                .addActionDetails(prefs.getString(Constants.USER_MOBILE_NUM_1_PREF, "----"), Constants.TYPE_CALL, data, "");
     }
 }

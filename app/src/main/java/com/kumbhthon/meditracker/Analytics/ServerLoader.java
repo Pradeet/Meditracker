@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 
 import com.google.gson.Gson;
 import com.kumbhthon.meditracker.Utils.Constants;
+import com.kumbhthon.meditracker.Utils.GPS.LocationTracker;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -14,9 +15,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-/**
- * Created by pradeet on 22-Aug-15.
- */
 public class ServerLoader {
 
     private final Context context;
@@ -40,7 +38,10 @@ public class ServerLoader {
                     ActionDetails actionDetails = new ActionDetails(jsonObject.getString("action_PhoneNumber"),
                             jsonObject.getString("action_Time"),
                             jsonObject.getString("action_Type"),
-                            jsonObject.getString("action_data"));
+                            jsonObject.getString("action_data"),
+                            jsonObject.getString("action_Longitude"),
+                            jsonObject.getString("action_Latitude"),
+                            jsonObject.getString("action_extraData"));
                     ActionQueue.add(actionDetails);
                 }
             } catch (JSONException e) {
@@ -73,9 +74,12 @@ public class ServerLoader {
         edit.commit();
     }
 
-    public void addActionDetails(String action_PhoneNumber, String action_Type, String action_data) {
+    public void addActionDetails(String action_PhoneNumber, String action_Type, String action_data, String action_extradata) {
         String timedate = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date());
-        ActionDetails actionDetails = new ActionDetails(action_PhoneNumber, timedate, action_Type, action_data);
+        LocationTracker locationTracker = new LocationTracker(context);
+        String Longitude = locationTracker.getLongitude() + "";
+        String Latitude = locationTracker.getLatitude() + "";
+        ActionDetails actionDetails = new ActionDetails(action_PhoneNumber, timedate, action_Type, action_data, Longitude, Latitude, action_extradata);
 
         ArrayList<ActionDetails> ActionQueue = getActionPrefs();
         ActionQueue.add(actionDetails);
