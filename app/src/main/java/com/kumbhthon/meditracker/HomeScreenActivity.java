@@ -74,7 +74,7 @@ public class HomeScreenActivity extends ActionBarActivity {
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.slider_list);
 
-        rowItems = new ArrayList<RowItem>();
+        rowItems = new ArrayList<>();
 
         for (int i = 0; i < menutitles.length; i++) {
             RowItem items = new RowItem(menutitles[i], menuIcons.getResourceId(i, -1));
@@ -125,7 +125,7 @@ public class HomeScreenActivity extends ActionBarActivity {
         Intent i = new Intent(HomeScreenActivity.this, LocService.class);
         startService(i);
 
-        if(PrefManager.getPrefs(getApplicationContext(), Constants.REGISTER_PENDING_BIT_PREF) || PrefManager.getPrefs(getApplicationContext(), Constants.ACTION_PENDING_BIT_PREF)){
+        if (PrefManager.getPrefs(getApplicationContext(), Constants.REGISTER_PENDING_BIT_PREF) || PrefManager.getPrefs(getApplicationContext(), Constants.ACTION_PENDING_BIT_PREF)) {
             ServerLoader serverLoader = new ServerLoader(getApplicationContext());
             serverLoader.sendToServer();
         }
@@ -133,17 +133,15 @@ public class HomeScreenActivity extends ActionBarActivity {
 
     @Override
     public void onBackPressed() {
-        if(!onBackPressed){
+        if (!onBackPressed) {
             onBackPressed = true;
-            Toast.makeText(getApplicationContext(), "Click back to exit" ,Toast.LENGTH_SHORT).show();
-        }
-        else{
+            Toast.makeText(getApplicationContext(), "Click back to exit", Toast.LENGTH_SHORT).show();
+        } else {
             onBackPressed = false;
             super.onBackPressed();
         }
 
     }
-
 
 
     class SlideitemListener implements ListView.OnItemClickListener {
@@ -162,36 +160,26 @@ public class HomeScreenActivity extends ActionBarActivity {
                 fragment = new Emeregency_service();
                 break;
             case 1:
-                fragment = new FirstAidFragment();
-                break;
-            case 2:
-                fragment = new HospitalLocatorFragment();
-                break;
-            case 3:
                 fragment = new HospitalDirectoryFragment_new();
                 break;
-            case 4:
+            case 2:
                 fragment = new Settings_Fragment();
                 break;
-            case 5:
+            case 3:
                 fragment = new UserGuideFragment();
                 break;
-            case 6:
+            case 4:
                 fragment = new Feedback_Fragment();
                 break;
-            case 7:
+            case 5:
                 fragment = new Share_Fragment();
                 break;
-            case 8:
+            case 6:
                 fragment = new RateUs_Fragment();
                 break;
-
-
-            case 9:
+            case 7:
                 fragment = new About_us();
                 break;
-
-
             default:
                 break;
         }

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/tabhost"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"/>
+    </LinearLayout>
+</TabHost>
+
+<!--
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:gravity="center">
+
+    <Button
+        android:id="@+id/hospitalButton"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/button"
+        android:drawableLeft="@mipmap/hospital_1"
+        android:paddingLeft="20dp"
+        android:text="Hospital"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textSize="25dp" />
+
+    <Button
+        android:id="@+id/MedicalStoreButton"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:layout_alignLeft="@+id/hospitalButton"
+        android:layout_below="@+id/hospitalButton"
+        android:layout_marginTop="27dp"
+        android:background="@drawable/button"
+        android:drawableLeft="@mipmap/medical_1"
+        android:drawablePadding="7dp"
+        android:paddingLeft="20dp"
+        android:text="Medical Store"
+        android:textColor="#ffffff"
+        android:textSize="25dp" />
+
+    <Button
+        android:id="@+id/kumbhHospitalButton"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:layout_alignLeft="@+id/MedicalStoreButton"
+        android:layout_below="@+id/MedicalStoreButton"
+        android:layout_marginTop="27dp"
+        android:background="@drawable/button"
+        android:drawableLeft="@mipmap/hospital_1"
+        android:drawablePadding="7dp"
+        android:paddingLeft="20dp"
+        android:text="Kumbh Hospital"
+        android:textColor="#ffffff"
+        android:textSize="25dp" />
+
+</RelativeLayout>
+-->
+

@@ -1,6 +1,7 @@
 package com.kumbhthon.meditracker;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
@@ -17,6 +18,8 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.kumbhthon.meditracker.Analytics.ServerLoader;
+import com.kumbhthon.meditracker.Utils.Constants;
 
 
 public class Medical_map extends FragmentActivity {
@@ -753,6 +756,7 @@ public class Medical_map extends FragmentActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.map_activity);
+            sendLocatorAction("Medical Store");
         try {
 
             // Loading map
@@ -849,5 +853,10 @@ public class Medical_map extends FragmentActivity {
         initilizeMap();
     }
 
+    private void sendLocatorAction(String data) {
+        SharedPreferences pref = getSharedPreferences(Constants.USER_PREFERENCES, Context.MODE_PRIVATE);
+        new ServerLoader(getApplicationContext())
+                .addActionDetails(pref.getString(Constants.USER_MOBILE_NUM_1_PREF, null), Constants.TYPE_LOCATOR, data, "n/a");
+    }
 
 }

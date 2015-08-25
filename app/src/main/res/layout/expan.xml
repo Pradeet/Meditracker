@@ -7,12 +7,6 @@
     tools:context=".FirstAid_Fragment"
     tools:ignore="MergeRootFrame">
 
-    <include
-        android:id="@+id/FirstAidActivity_English_toolbar"
-        layout="@layout/tool_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
     <ExpandableListView
         android:id="@+id/expandanlelisthelp"
         android:layout_width="wrap_content"

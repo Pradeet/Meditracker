@@ -3,47 +3,80 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
-    android:gravity="center">
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/hospitalButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
-        android:text="Emergency Call"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+    android:background="@drawable/bg1">
 
     <Button
         android:id="@+id/hospitalButton"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="90dp"
+        android:background="@drawable/hloc" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/button_ambu"
-        android:drawableLeft="@mipmap/sos_ambu"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:text="Tap to call ambulance"
-        android:textAlignment="center"
-        android:textColor="#ffffff"
-        android:textSize="18dp" />
+        android:layout_marginTop="35dp"
+        android:text="Tap to call an ambulance"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
-    <!--<TextView-->
-    <!--android:id="@+id/textView2"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_above="@+id/hospitalButton"-->
-    <!--android:layout_centerHorizontal="true"s-->
-    <!--android:layout_marginBottom="49dp"-->
-    <!--android:text="TAP TO CALL AN AMBULANCE"-->
-    <!--android:textColor="#00008B"-->
-    <!--android:textSize="20sp"-->
-    <!--android:textStyle="bold" />-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="40dp"
+        android:orientation="vertical">
 
+        <Button
+            android:id="@+id/FirstAidButton"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/first_aid" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="First Aid"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="40dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/HospitalLocatorButton"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/loc" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Hospital\n Locator"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 </RelativeLayout>

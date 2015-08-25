@@ -2,28 +2,24 @@ package com.kumbhthon.meditracker;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.widget.Toolbar;
 import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnGroupExpandListener;
 
 import com.kumbhthon.meditracker.Adapter.FirstAidAdapter_english;
+import com.kumbhthon.meditracker.Analytics.ServerLoader;
+import com.kumbhthon.meditracker.Utils.Constants;
 
-public class FirstAidActivity_English extends ActionBarActivity implements OnGroupExpandListener {
+public class FirstAidActivity_English extends Activity implements OnGroupExpandListener {
 
     ExpandableListView listView;
     static int LastExpandedPostion = -1;
-    Toolbar toolbar;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.expan);
-
-        toolbar = (Toolbar) findViewById(R.id.FirstAidActivity_English_toolbar);
-        setSupportActionBar(toolbar);
-
+        sendFirstAidAction("English");
         listView = (ExpandableListView) findViewById(R.id.expandanlelisthelp);
         listView.setAdapter(new FirstAidAdapter_english(this));
 
@@ -40,5 +36,10 @@ public class FirstAidActivity_English extends ActionBarActivity implements OnGro
 
     }
 
+    private void sendFirstAidAction(String data) {
+        SharedPreferences prefs = getSharedPreferences(Constants.USER_PREFERENCES, Context.MODE_PRIVATE);
+        new ServerLoader(getApplicationContext())
+                .addActionDetails(prefs.getString(Constants.USER_MOBILE_NUM_1_PREF, null), Constants.TYPE_FIRSTAID, data, "n/a");
+    }
 
 }

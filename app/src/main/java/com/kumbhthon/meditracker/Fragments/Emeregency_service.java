@@ -14,13 +14,16 @@ import android.widget.Button;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.kumbhthon.meditracker.Analytics.ServerLoader;
-import com.kumbhthon.meditracker.NewActivity;
+import com.kumbhthon.meditracker.FirstAidActivity;
+import com.kumbhthon.meditracker.HospitalLocatorActivity;
 import com.kumbhthon.meditracker.R;
 import com.kumbhthon.meditracker.Utils.Constants;
 
 @SuppressLint("NewApi")
 public class Emeregency_service extends Fragment {
-    Button btn_mp1;
+    Button EmergencyButton;
+    Button FirstAidButton;
+    Button HospitalLocatorButton;
 
     public Emeregency_service() {
 
@@ -32,14 +35,17 @@ public class Emeregency_service extends Fragment {
 
         final String[] emergency_numbers_array = {"108", "Government District Hospital", "Nashik MunicipalCorporation", "Redcros Mahatma Gandhiroad", "E.S.I. Hopsital,Satpur", "Shivsena Mhahanagar", "IPS Note Press,Nashik Road", "Rajdut Mitramandal", "Cantonment Board,Devlali Camp", "Jayram Hospital, Nashik Road", "Aparn Trust", "Bahujan yua Sanghatna,Nashk Road", "Vision Hospital", "Sitabai More Hospital,Cidco", "Dr. Vinchurkar,Trimbak Naka"};
 
-        btn_mp1 = (Button) rootView.findViewById(R.id.hospitalButton);
-        btn_mp1.setOnClickListener(new View.OnClickListener() {
+        EmergencyButton = (Button) rootView.findViewById(R.id.hospitalButton);
+        FirstAidButton = (Button) rootView.findViewById(R.id.FirstAidButton);
+        HospitalLocatorButton = (Button) rootView.findViewById(R.id.HospitalLocatorButton);
+
+        EmergencyButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
 
                 new MaterialDialog.Builder(getActivity())
-                        .title("Government Hospitals")
+                        .title("Government Ambulances")
                         .items(emergency_numbers_array)
                         .itemsCallback(new MaterialDialog.ListCallback() {
                             @Override
@@ -48,12 +54,9 @@ public class Emeregency_service extends Fragment {
                                     String data = charSequence.toString();
                                     data = data + ":" + "108";
                                     addCallAction(data);
-//                            new ServerLoader(getActivity().getApplicationContext()).sendToServer();
                                     Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
                                     phoneIntent.setData(Uri.parse("tel:108"));
                                     startActivity(phoneIntent);
-//                                    Intent intent = new Intent(getActivity().getApplicationContext(), NewActivity.class);
-//                                    startActivity(intent);
                                 } else if (i == 1) {
                                     String data = charSequence.toString();
                                     data = data + ":" + "02532576106";
@@ -159,6 +162,22 @@ public class Emeregency_service extends Fragment {
             }
         });
 
+        FirstAidButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity().getApplicationContext(), FirstAidActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        HospitalLocatorButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity().getApplicationContext(), HospitalLocatorActivity.class);
+                startActivity(intent);
+            }
+        });
+
         return rootView;
     }
 
@@ -167,4 +186,6 @@ public class Emeregency_service extends Fragment {
         new ServerLoader(getActivity().getApplicationContext())
                 .addActionDetails(prefs.getString(Constants.USER_MOBILE_NUM_1_PREF, "----"), Constants.TYPE_CALL, data, "");
     }
+
+
 }

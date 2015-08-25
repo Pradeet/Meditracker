@@ -3,6 +3,7 @@ package com.kumbhthon.meditracker;
 import java.util.ArrayList;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
@@ -18,6 +19,8 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.kumbhthon.meditracker.Analytics.ServerLoader;
+import com.kumbhthon.meditracker.Utils.Constants;
 
 public class Route_wise_hospital extends FragmentActivity {
     // Google Map
@@ -175,6 +178,7 @@ public class Route_wise_hospital extends FragmentActivity {
         setContentView(R.layout.map_activity);
         // Loading map
 
+        sendLocatorAction("Kumbh Hospital");
         initilizeMap();
 
         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
@@ -261,10 +265,10 @@ public class Route_wise_hospital extends FragmentActivity {
     private void initilizeMap() {
 
         if (googleMap == null) {
-        // requestWindowFeature(Window.FEATURE_NO_TITLE);
-        // getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-        // WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        // setContentView(R.layout.map_activity);
+            // requestWindowFeature(Window.FEATURE_NO_TITLE);
+            // getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            // WindowManager.LayoutParams.FLAG_FULLSCREEN);
+            // setContentView(R.layout.map_activity);
 
             SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                     .findFragmentById(R.id.map);
@@ -284,5 +288,11 @@ public class Route_wise_hospital extends FragmentActivity {
     protected void onResume() {
         super.onResume();
         initilizeMap();
+    }
+
+    private void sendLocatorAction(String data) {
+        SharedPreferences pref = getSharedPreferences(Constants.USER_PREFERENCES, Context.MODE_PRIVATE);
+        new ServerLoader(getApplicationContext())
+                .addActionDetails(pref.getString(Constants.USER_MOBILE_NUM_1_PREF, null), Constants.TYPE_LOCATOR, data, "n/a");
     }
 }
