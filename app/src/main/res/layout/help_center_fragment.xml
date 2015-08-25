@@ -2,19 +2,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    
-    
-    tools:ignore="MergeRootFrame"
+    android:background="#707883"
+    android:scaleType="centerCrop"
     tools:context=".FirstAid_Fragment"
-       android:scaleType="centerCrop"
-     android:background="#707883" >
+    tools:ignore="MergeRootFrame">
 
-     <ExpandableListView 
+    <ExpandableListView
         android:id="@+id/expandanlelisthelp"
-        android:layout_height="fill_parent"
         android:layout_width="wrap_content"
-       android:divider="@android:color/transparent"
-       android:background="#ffffff"
-       
-      />
+        android:layout_height="fill_parent"
+        android:background="#ffffff"
+        android:divider="@android:color/transparent"
+
+        />
 </RelativeLayout>

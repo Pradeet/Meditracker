@@ -30,6 +30,7 @@ import com.kumbhthon.meditracker.Fragments.Emeregency_service;
 import com.kumbhthon.meditracker.Fragments.Feedback_Fragment;
 import com.kumbhthon.meditracker.Fragments.FirstAidFragment;
 import com.kumbhthon.meditracker.Fragments.HospitalDirectoryFragment;
+import com.kumbhthon.meditracker.Fragments.HospitalDirectoryFragment_new;
 import com.kumbhthon.meditracker.Fragments.HospitalLocatorFragment;
 import com.kumbhthon.meditracker.Fragments.RateUs_Fragment;
 import com.kumbhthon.meditracker.Fragments.Settings_Fragment;
@@ -167,7 +168,7 @@ public class HomeScreenActivity extends ActionBarActivity {
                 fragment = new HospitalLocatorFragment();
                 break;
             case 3:
-                fragment = new HospitalDirectoryFragment();
+                fragment = new HospitalDirectoryFragment_new();
                 break;
             case 4:
                 fragment = new Settings_Fragment();

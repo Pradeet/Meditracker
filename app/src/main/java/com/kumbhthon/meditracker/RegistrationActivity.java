@@ -43,7 +43,6 @@ public class RegistrationActivity extends ActionBarActivity implements OnClickLi
         if (vw == btn1) {
 
             if (checkValidation()) {
-
                 SharedPreferences sharedPreferences = context.getSharedPreferences(Constants.USER_PREFERENCES, Context.MODE_PRIVATE);
                 Editor edit = sharedPreferences.edit();
                 edit.putBoolean(Constants.RESGISTRATION_STATUS_PREF, true);
@@ -63,19 +62,14 @@ public class RegistrationActivity extends ActionBarActivity implements OnClickLi
                 finish();
             } else {
                 Toast.makeText(getApplicationContext(), "Please enter proper details", Toast.LENGTH_SHORT).show();
-
             }
-
         }
 
     }
 
     private void sendRegistrationDetails() {
-        SharedPreferences prefs = context.getSharedPreferences(Constants.USER_PREFERENCES, Context.MODE_PRIVATE);
-        if (prefs.getBoolean(Constants.REGISTER_PENDING_BIT_PREF, true)) {
-            VolleyCommands volleyCommands = new VolleyCommands(getApplicationContext());
-            volleyCommands.POSTUser();
-        }
+        VolleyCommands volleyCommands = new VolleyCommands(getApplicationContext());
+        volleyCommands.POSTUser();
     }
 
     public boolean checkValidation() {

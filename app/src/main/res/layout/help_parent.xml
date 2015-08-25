@@ -2,20 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-       
-  android:layout_marginTop="1dp"
-  android:layout_marginBottom="1dp"
-    android:orientation="vertical" >
-    
-      <TextView
-          android:id="@+id/xtxvwExpndparenttxt"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_marginLeft="20dp"
-       
-          android:padding="23dp"
-          android:text="parent"
-          android:textAppearance="?android:attr/textAppearanceMedium"
-          android:textColor="#707883" />
+
+    android:layout_marginBottom="1dp"
+    android:layout_marginTop="1dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/xtxvwExpndparenttxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:padding="15dp"
+        android:text="parent"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#707883" />
 
 </LinearLayout>

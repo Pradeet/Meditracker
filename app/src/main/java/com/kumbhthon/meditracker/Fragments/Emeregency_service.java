@@ -10,16 +10,17 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
+import android.widget.Button;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.kumbhthon.meditracker.Analytics.ServerLoader;
+import com.kumbhthon.meditracker.NewActivity;
 import com.kumbhthon.meditracker.R;
 import com.kumbhthon.meditracker.Utils.Constants;
 
 @SuppressLint("NewApi")
 public class Emeregency_service extends Fragment {
-    ImageButton btn_mp1, btn_mp2;
+    Button btn_mp1;
 
     public Emeregency_service() {
 
@@ -31,7 +32,7 @@ public class Emeregency_service extends Fragment {
 
         final String[] emergency_numbers_array = {"108", "Government District Hospital", "Nashik MunicipalCorporation", "Redcros Mahatma Gandhiroad", "E.S.I. Hopsital,Satpur", "Shivsena Mhahanagar", "IPS Note Press,Nashik Road", "Rajdut Mitramandal", "Cantonment Board,Devlali Camp", "Jayram Hospital, Nashik Road", "Aparn Trust", "Bahujan yua Sanghatna,Nashk Road", "Vision Hospital", "Sitabai More Hospital,Cidco", "Dr. Vinchurkar,Trimbak Naka"};
 
-        btn_mp1 = (ImageButton) rootView.findViewById(R.id.hospitalButton);
+        btn_mp1 = (Button) rootView.findViewById(R.id.hospitalButton);
         btn_mp1.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -51,6 +52,8 @@ public class Emeregency_service extends Fragment {
                                     Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
                                     phoneIntent.setData(Uri.parse("tel:108"));
                                     startActivity(phoneIntent);
+//                                    Intent intent = new Intent(getActivity().getApplicationContext(), NewActivity.class);
+//                                    startActivity(intent);
                                 } else if (i == 1) {
                                     String data = charSequence.toString();
                                     data = data + ":" + "02532576106";

@@ -17,31 +17,33 @@
         android:textSize="20sp"
         android:textStyle="bold" />
 
-    <ImageButton
+    <Button
         android:id="@+id/hospitalButton"
-        android:layout_width="200dp"
-        android:layout_height="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:background="@drawable/button_ambu"
+        android:drawableLeft="@mipmap/sos_ambu"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
-        android:src="@mipmap/sos_ambu"
-        android:text="Help"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="Tap to call ambulance"
         android:textAlignment="center"
         android:textColor="#ffffff"
-        android:textSize="25dp" />
+        android:textSize="18dp" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/hospitalButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="49dp"
-        android:text="TAP TO CALL AN AMBULANCE"
-        android:textColor="#00008B"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+    <!--<TextView-->
+    <!--android:id="@+id/textView2"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_above="@+id/hospitalButton"-->
+    <!--android:layout_centerHorizontal="true"s-->
+    <!--android:layout_marginBottom="49dp"-->
+    <!--android:text="TAP TO CALL AN AMBULANCE"-->
+    <!--android:textColor="#00008B"-->
+    <!--android:textSize="20sp"-->
+    <!--android:textStyle="bold" />-->
 
 </RelativeLayout>

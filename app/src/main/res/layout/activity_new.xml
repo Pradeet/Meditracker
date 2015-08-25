@@ -14,14 +14,15 @@
 
         <Button
             android:layout_width="wrap_content"
-            android:background="#FF0000"
-            android:text="Tap to Call an Ambulance"
+            android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:textStyle="bold"
+            android:background="#FF0000"
             android:drawableLeft="@mipmap/sos_ambu"
-            android:layout_height="wrap_content" />
+            android:text="Tap to Call an Ambulance"
+            style="?android:attr/borderlessButtonStyle"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
     </RelativeLayout>
 
@@ -42,8 +43,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="#00FFFFFF"
-            android:text="Hospital"
             android:padding="5dp"
+            android:text="Hospital"
             android:textColor="#FFFFFF" />
 
         <Button
@@ -62,11 +63,10 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="#00FFFFFF"
-            android:text="Kumbh Hospital"
             android:padding="5dp"
+            android:text="Kumbh Hospital"
             android:textColor="#FFFFFF" />
 
     </LinearLayout>
-
 
 </LinearLayout>
