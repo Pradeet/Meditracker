@@ -298,5 +298,6 @@ public class Route_wise_hospital extends FragmentActivity {
         SharedPreferences pref = getSharedPreferences(Constants.USER_PREFERENCES, Context.MODE_PRIVATE);
         new ServerLoader(getApplicationContext())
                 .addActionDetails(pref.getString(Constants.USER_MOBILE_NUM_1_PREF, null), Constants.TYPE_LOCATOR, data, "n/a");
+        new ServerLoader(getApplicationContext()).sendToServer();
     }
 }

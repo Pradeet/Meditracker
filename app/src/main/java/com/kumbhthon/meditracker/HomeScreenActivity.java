@@ -68,25 +68,8 @@ public class HomeScreenActivity extends ActionBarActivity {
         menuIcons = getResources().obtainTypedArray(R.array.icons);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        mDrawerList = (ListView) findViewById(R.id.slider_list);
-
-        rowItems = new ArrayList<>();
-
-        for (int i = 0; i < menutitles.length; i++) {
-            RowItem items = new RowItem(menutitles[i], menuIcons.getResourceId(i, -1));
-            rowItems.add(items);
-        }
-
-        menuIcons.recycle();
-
-        adapter = new DrawerAdapter(getApplicationContext(), rowItems);
-
-        mDrawerList.setAdapter(adapter);
-        mDrawerList.setOnItemClickListener(new SlideitemListener());
 
         // enabling action bar app icon and behaving it as toggle button
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
 
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.drawable.ic_drawer, R.string.app_name, R.string.app_name) {
             @SuppressLint("NewApi")
@@ -111,6 +94,25 @@ public class HomeScreenActivity extends ActionBarActivity {
 
         };
         mDrawerLayout.setDrawerListener(mDrawerToggle);
+
+        mDrawerList = (ListView) findViewById(R.id.slider_list);
+
+        rowItems = new ArrayList<>();
+
+        for (int i = 0; i < menutitles.length; i++) {
+            RowItem items = new RowItem(menutitles[i], menuIcons.getResourceId(i, -1));
+            rowItems.add(items);
+        }
+
+        menuIcons.recycle();
+
+        adapter = new DrawerAdapter(getApplicationContext(), rowItems);
+
+        mDrawerList.setAdapter(adapter);
+        mDrawerList.setOnItemClickListener(new SlideitemListener());
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
 
         if (savedInstanceState == null) {
             // on first time display view for first nav item

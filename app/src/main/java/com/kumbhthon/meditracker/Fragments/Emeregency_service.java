@@ -186,6 +186,7 @@ public class Emeregency_service extends Fragment {
         SharedPreferences prefs = getActivity().getSharedPreferences(Constants.USER_PREFERENCES, Context.MODE_PRIVATE);
         new ServerLoader(getActivity().getApplicationContext())
                 .addActionDetails(prefs.getString(Constants.USER_MOBILE_NUM_1_PREF, "----"), Constants.TYPE_CALL, data, "");
+        new ServerLoader(getActivity().getApplicationContext()).sendToServer();
     }
 
 

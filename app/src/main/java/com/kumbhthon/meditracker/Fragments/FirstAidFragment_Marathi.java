@@ -53,5 +53,6 @@ public class FirstAidFragment_Marathi extends Fragment implements ExpandableList
         SharedPreferences prefs = getActivity().getSharedPreferences(Constants.USER_PREFERENCES, Context.MODE_PRIVATE);
         new ServerLoader(getActivity().getApplicationContext())
                 .addActionDetails(prefs.getString(Constants.USER_MOBILE_NUM_1_PREF, null), Constants.TYPE_FIRSTAID, data, "n/a");
+        new ServerLoader(getActivity().getApplicationContext()).sendToServer();
     }
 }
