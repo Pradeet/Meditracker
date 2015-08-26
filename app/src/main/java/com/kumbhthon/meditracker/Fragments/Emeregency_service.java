@@ -15,6 +15,7 @@ import android.widget.Button;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.kumbhthon.meditracker.Analytics.ServerLoader;
 import com.kumbhthon.meditracker.FirstAidActivity;
+import com.kumbhthon.meditracker.FirstAidActivity_new;
 import com.kumbhthon.meditracker.HospitalLocatorActivity;
 import com.kumbhthon.meditracker.R;
 import com.kumbhthon.meditracker.Utils.Constants;
@@ -54,105 +55,105 @@ public class Emeregency_service extends Fragment {
                                     String data = charSequence.toString();
                                     data = data + ":" + "108";
                                     addCallAction(data);
-                                    Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
+                                    Intent phoneIntent = new Intent(Intent.ACTION_CALL);
                                     phoneIntent.setData(Uri.parse("tel:108"));
                                     startActivity(phoneIntent);
                                 } else if (i == 1) {
                                     String data = charSequence.toString();
                                     data = data + ":" + "02532576106";
                                     addCallAction(data);
-                                    Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
+                                    Intent phoneIntent = new Intent(Intent.ACTION_CALL);
                                     phoneIntent.setData(Uri.parse("tel:02532576106"));
                                     startActivity(phoneIntent);
                                 } else if (i == 2) {
                                     String data = charSequence.toString();
                                     data = data + ":" + "102";
                                     addCallAction(data);
-                                    Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
+                                    Intent phoneIntent = new Intent(Intent.ACTION_CALL);
                                     phoneIntent.setData(Uri.parse("tel:102"));
                                     startActivity(phoneIntent);
                                 } else if (i == 3) {
                                     String data = charSequence.toString();
                                     data = data + ":" + "02532504926";
                                     addCallAction(data);
-                                    Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
+                                    Intent phoneIntent = new Intent(Intent.ACTION_CALL);
                                     phoneIntent.setData(Uri.parse("tel:02532504926"));
                                     startActivity(phoneIntent);
                                 } else if (i == 4) {
                                     String data = charSequence.toString();
                                     data = data + ":" + "02532351045";
                                     addCallAction(data);
-                                    Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
+                                    Intent phoneIntent = new Intent(Intent.ACTION_CALL);
                                     phoneIntent.setData(Uri.parse("tel:02532351045"));
                                     startActivity(phoneIntent);
                                 } else if (i == 5) {
                                     String data = charSequence.toString();
                                     data = data + ":" + "02532511313";
                                     addCallAction(data);
-                                    Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
+                                    Intent phoneIntent = new Intent(Intent.ACTION_CALL);
                                     phoneIntent.setData(Uri.parse("tel:02532511313"));
                                     startActivity(phoneIntent);
                                 } else if (i == 6) {
                                     String data = charSequence.toString();
                                     data = data + ":" + "02532463721";
                                     addCallAction(data);
-                                    Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
+                                    Intent phoneIntent = new Intent(Intent.ACTION_CALL);
                                     phoneIntent.setData(Uri.parse("tel:02532463721"));
                                     startActivity(phoneIntent);
                                 } else if (i == 7) {
                                     String data = charSequence.toString();
                                     data = data + ":" + "02532576106";
                                     addCallAction(data);
-                                    Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
+                                    Intent phoneIntent = new Intent(Intent.ACTION_CALL);
                                     phoneIntent.setData(Uri.parse("tel:02532576106"));
                                     startActivity(phoneIntent);
                                 } else if (i == 8) {
                                     String data = charSequence.toString();
                                     data = data + ":" + "02532491377";
                                     addCallAction(data);
-                                    Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
+                                    Intent phoneIntent = new Intent(Intent.ACTION_CALL);
                                     phoneIntent.setData(Uri.parse("tel:02532491377"));
                                     startActivity(phoneIntent);
                                 } else if (i == 9) {
                                     String data = charSequence.toString();
                                     data = data + ":" + "02532463414";
                                     addCallAction(data);
-                                    Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
+                                    Intent phoneIntent = new Intent(Intent.ACTION_CALL);
                                     phoneIntent.setData(Uri.parse("tel:02532463414"));
                                     startActivity(phoneIntent);
                                 } else if (i == 10) {
                                     String data = charSequence.toString();
                                     data = data + ":" + "02532575516";
                                     addCallAction(data);
-                                    Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
+                                    Intent phoneIntent = new Intent(Intent.ACTION_CALL);
                                     phoneIntent.setData(Uri.parse("tel:02532575516"));
                                     startActivity(phoneIntent);
                                 } else if (i == 11) {
                                     String data = charSequence.toString();
                                     data = data + ":" + "02532463442";
                                     addCallAction(data);
-                                    Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
+                                    Intent phoneIntent = new Intent(Intent.ACTION_CALL);
                                     phoneIntent.setData(Uri.parse("tel:02532463442"));
                                     startActivity(phoneIntent);
                                 } else if (i == 12) {
                                     String data = charSequence.toString();
                                     data = data + ":" + "02532581111";
                                     addCallAction(data);
-                                    Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
+                                    Intent phoneIntent = new Intent(Intent.ACTION_CALL);
                                     phoneIntent.setData(Uri.parse("tel:02532581111"));
                                     startActivity(phoneIntent);
                                 } else if (i == 13) {
                                     String data = charSequence.toString();
                                     data = data + ":" + "02532392491";
                                     addCallAction(data);
-                                    Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
+                                    Intent phoneIntent = new Intent(Intent.ACTION_CALL);
                                     phoneIntent.setData(Uri.parse("tel:02532392491"));
                                     startActivity(phoneIntent);
                                 } else if (i == 14) {
                                     String data = charSequence.toString();
                                     data = data + ":" + "02532501021";
                                     addCallAction(data);
-                                    Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
+                                    Intent phoneIntent = new Intent(Intent.ACTION_CALL);
                                     phoneIntent.setData(Uri.parse("tel:02532501021"));
                                     startActivity(phoneIntent);
                                 }
@@ -165,7 +166,7 @@ public class Emeregency_service extends Fragment {
         FirstAidButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity().getApplicationContext(), FirstAidActivity.class);
+                Intent intent = new Intent(getActivity().getApplicationContext(), FirstAidActivity_new.class);
                 startActivity(intent);
             }
         });

@@ -21,10 +21,16 @@ public class LocationTracker {
     }
 
     public double getLongitude() {
+        if (location == null){
+            return 0.0;
+        }
         return location.getLongitude();
     }
 
     public double getLatitude() {
+        if (location == null){
+            return 0.0;
+        }
         return location.getLatitude();
     }
 }

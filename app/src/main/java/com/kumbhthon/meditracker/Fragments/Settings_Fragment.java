@@ -21,7 +21,6 @@ import com.kumbhthon.meditracker.Utils.Constants;
 
 @SuppressLint("NewApi")
 public class Settings_Fragment extends Fragment implements OnClickListener {
-    //	  TestAdapter mDbHelper;
     Button bsave;
     EditText nm, n1, n2;
     String Name, Number1, Number2;
@@ -41,7 +40,7 @@ public class Settings_Fragment extends Fragment implements OnClickListener {
         nm.setText(prefs.getString(Constants.USER_NAME_PREF, "----"));
         n1.setText(prefs.getString(Constants.USER_MOBILE_NUM_1_PREF, "----"));
         n2.setText(prefs.getString(Constants.USER_MOBILE_NUM_2_PREF, "----"));
-//
+
         return rootView;
     }
 
@@ -50,11 +49,8 @@ public class Settings_Fragment extends Fragment implements OnClickListener {
         if (view == bsave) {
 
             if (validation()) {
-
-
                 SharedPreferences.Editor edit = prefs.edit();
                 edit.putBoolean(Constants.RESGISTRATION_STATUS_PREF, true);
-
 
                 edit.putString(Constants.USER_NAME_PREF, Name);
                 edit.putString(Constants.USER_MOBILE_NUM_1_PREF, Number1);
@@ -66,7 +62,6 @@ public class Settings_Fragment extends Fragment implements OnClickListener {
                 startActivity(i1);
             } else {
                 Toast.makeText(getActivity().getApplicationContext(), "Please enter proper details", Toast.LENGTH_SHORT).show();
-
             }
         }
     }
@@ -75,27 +70,25 @@ public class Settings_Fragment extends Fragment implements OnClickListener {
         SharedPreferences prefs = getActivity().getSharedPreferences(Constants.USER_PREFERENCES, Context.MODE_PRIVATE);
         VolleyCommands volleyCommands = new VolleyCommands(getActivity().getApplicationContext());
         volleyCommands.POSTUser();
-
     }
 
     private boolean validation() {
-
         Name = nm.getText().toString();
         Number1 = n1.getText().toString();
         Number2 = n1.getText().toString();
         if (Name.length() <= 0) {
-            nm.setError("Name is mandatory");
+            nm.setError("Name is Mandatory");
             return false;
         } else if (Number1.length() <= 0) {
             n1.setError("Mobile number is mandatory");
             return false;
-        } else if (Number1.length() < 10) {
+        } else if (Number1.length() != 10) {
             n1.setError("Mobile number should be of 10 digits");
             return false;
         } else if (Number2.length() <= 0) {
             n2.setError("Mobile number is mandatory");
             return false;
-        } else if (Number2.length() < 10) {
+        } else if (Number2.length() != 10) {
             n2.setError("Mobile number should be of 10 digits");
             return false;
         } else {

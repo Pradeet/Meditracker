@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.kumbhthon.meditracker"
-    android:installLocation="auto" >
+    android:installLocation="auto">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
@@ -44,8 +44,8 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
-        <receiver android:name=".Utils.BRNetConnectivity" >
+        android:theme="@style/AppTheme">
+        <receiver android:name=".Utils.BRNetConnectivity">
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
                 <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
@@ -54,7 +54,7 @@
 
         <activity
             android:name=".SplashscreenActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -63,47 +63,39 @@
         </activity>
         <activity
             android:name=".RegistrationActivity"
-            android:label="@string/title_activity_registration" >
-        </activity>
+            android:label="@string/title_activity_registration"></activity>
         <activity
             android:name=".HomeScreenActivity"
-            android:label="@string/title_activity_home_screen" >
-        </activity>
+            android:label="@string/title_activity_home_screen"></activity>
         <activity
             android:name=".FirstAidActivity_English"
             android:label="@string/title_activity_first_aid__fragment"
-            android:theme="@style/Theme.AppCompat.NoActionBar" >
-        </activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
         <activity
             android:name=".MapActivity"
-            android:label="@string/title_activity_h__map" >
-        </activity>
+            android:label="@string/title_activity_h__map"></activity>
         <activity
             android:name=".Medical_map"
             android:label="@string/app_name"
-            android:theme="@style/Theme.AppCompat.Light" >
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light"></activity>
         <activity
             android:name=".Route_wise_hospital"
             android:label="@string/app_name"
-            android:theme="@style/Theme.AppCompat.Light" >
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light"></activity>
         <activity
             android:name=".FirstAidActivity_Hindi"
             android:label="@string/app_name"
-            android:theme="@style/Theme.AppCompat.Light" >
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light"></activity>
         <activity
             android:name=".FirstAidActivity_Marathi"
             android:label="@string/app_name"
-            android:theme="@style/Theme.AppCompat.Light" >
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light"></activity>
         <activity
             android:name=".TransperentActivity"
             android:label="@string/app_name"
             android:permission="com.kumbhthon.permission.Test"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.NoActionBar" >
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="com.example.emergencyhelp.MainWidget.ACTION_SMS_CALL" />
             </intent-filter>
@@ -112,7 +104,7 @@
         <receiver
             android:name=".MainWidget"
             android:label="@string/app_name"
-            android:permission="com.kumbhthon.permission.Test" >
+            android:permission="com.kumbhthon.permission.Test">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
                 <action android:name="com.kumbhthon.meditracker.MainWidget.ACTION_RECORDER" />
@@ -132,7 +124,7 @@
 
         <receiver
             android:name=".Utils.TickReceiver"
-            android:enabled="false" >
+            android:enabled="false">
             <intent-filter>
                 <action android:name="android.intent.action.TIME_TICK" />
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
@@ -156,17 +148,18 @@
 
         <activity
             android:name=".NewActivity"
-            android:label="@string/title_activity_new" >
-        </activity>
+            android:label="@string/title_activity_new"></activity>
         <activity
             android:name=".HospitalLocatorActivity"
-            android:label="@string/title_activity_hospital_locator" >
-        </activity>
+            android:label="@string/title_activity_hospital_locator"></activity>
         <activity
             android:name=".FirstAidActivity"
             android:label="@string/title_activity_first_aid"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
-        </activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+        <activity
+            android:name=".FirstAidActivity_new"
+            android:label="@string/title_activity_first_aid_activity_new"
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
     </application>
 
 </manifest>

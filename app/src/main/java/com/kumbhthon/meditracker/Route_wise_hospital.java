@@ -179,39 +179,43 @@ public class Route_wise_hospital extends FragmentActivity {
         // Loading map
 
         sendLocatorAction("Kumbh Hospital");
-        initilizeMap();
 
-        googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-        LatLng latLng = new LatLng(19.998176, 73.772719);
+        try {
+            initilizeMap();
+            googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+            LatLng latLng = new LatLng(19.998176, 73.772719);
 
-        // Show the current location in Google Map
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-        googleMap.animateCamera(CameraUpdateFactory.zoomTo(17));
-        googleMap.setMyLocationEnabled(true);
-        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        Criteria criteria = new Criteria();
+            // Show the current location in Google Map
+            googleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+            googleMap.animateCamera(CameraUpdateFactory.zoomTo(17));
+            googleMap.setMyLocationEnabled(true);
+            LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+            Criteria criteria = new Criteria();
 
-        Location location = locationManager
-                .getLastKnownLocation(locationManager.getBestProvider(criteria,
-                        false));
+            Location location = locationManager
+                    .getLastKnownLocation(locationManager.getBestProvider(criteria,
+                            false));
 
-        if (location != null) {
-            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location.getLatitude(), location.getLongitude()), 10));
+            if (location != null) {
+                googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location.getLatitude(), location.getLongitude()), 10));
 
-            CameraPosition cameraPosition = new CameraPosition.Builder()
-                    .target(new LatLng(location.getLatitude(), location
-                            .getLongitude())) // Sets the center of the map
-                            // to location user
-                    .zoom(17) // Sets the zoom
-                    .bearing(1000) // Sets the orientation of the camera to
-                            // east
-                    .tilt(60) // Sets the tilt of the camera to 30 degrees
-                    .build(); // Creates a CameraPosition from the builder
-            googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+                CameraPosition cameraPosition = new CameraPosition.Builder()
+                        .target(new LatLng(location.getLatitude(), location
+                                .getLongitude())) // Sets the center of the map
+                                // to location user
+                        .zoom(17) // Sets the zoom
+                        .bearing(1000) // Sets the orientation of the camera to
+                                // east
+                        .tilt(60) // Sets the tilt of the camera to 30 degrees
+                        .build(); // Creates a CameraPosition from the builder
+                googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
 
+            }
+
+            marker();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-
-        marker();
     }
 
     private void marker() {
