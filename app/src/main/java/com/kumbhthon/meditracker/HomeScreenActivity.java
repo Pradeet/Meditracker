@@ -9,13 +9,12 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.os.PersistableBundle;
+import android.os.Handler;
 import android.support.v4.app.ActionBarDrawerToggle;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -28,10 +27,7 @@ import com.kumbhthon.meditracker.Analytics.ServerLoader;
 import com.kumbhthon.meditracker.Fragments.About_us;
 import com.kumbhthon.meditracker.Fragments.Emeregency_service;
 import com.kumbhthon.meditracker.Fragments.Feedback_Fragment;
-import com.kumbhthon.meditracker.Fragments.FirstAidFragment;
-import com.kumbhthon.meditracker.Fragments.HospitalDirectoryFragment;
 import com.kumbhthon.meditracker.Fragments.HospitalDirectoryFragment_new;
-import com.kumbhthon.meditracker.Fragments.HospitalLocatorFragment;
 import com.kumbhthon.meditracker.Fragments.RateUs_Fragment;
 import com.kumbhthon.meditracker.Fragments.Settings_Fragment;
 import com.kumbhthon.meditracker.Fragments.Share_Fragment;
@@ -59,7 +55,7 @@ public class HomeScreenActivity extends ActionBarActivity {
     private List<RowItem> rowItems;
     private DrawerAdapter adapter;
 
-    boolean onBackPressed = false;
+    boolean doubleBackToExitPressedOnce = false;
 
     @SuppressLint("NewApi")
     @Override
@@ -133,13 +129,22 @@ public class HomeScreenActivity extends ActionBarActivity {
 
     @Override
     public void onBackPressed() {
-        if (!onBackPressed) {
-            onBackPressed = true;
-            Toast.makeText(getApplicationContext(), "Click back to exit", Toast.LENGTH_SHORT).show();
-        } else {
-            onBackPressed = false;
+        if (doubleBackToExitPressedOnce) {
             super.onBackPressed();
+            return;
         }
+
+        this.doubleBackToExitPressedOnce = true;
+        mDrawerLayout.openDrawer(Gravity.LEFT);
+        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce = false;
+            }
+        }, 2000);
 
     }
 

@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 import com.kumbhthon.meditracker.Fragments.FirstAidFragment_English;
 import com.kumbhthon.meditracker.Fragments.FirstAidFragment_Hindi;
@@ -28,8 +29,19 @@ public class FirstAidActivity_new extends ActionBarActivity {
         setContentView(R.layout.activity_first_aid_activity_new);
 
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
-        toolbar.setTitle("First Aid");
         setSupportActionBar(toolbar);
+
+        toolbar.setTitle("First Aid");
+        toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_arrow_back_white_24dp));
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("First Aid");
 
         adapter = new ViewPagerAdapter(getSupportFragmentManager(), Titles, Numboftabs);
 

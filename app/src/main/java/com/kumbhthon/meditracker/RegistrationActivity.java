@@ -37,6 +37,7 @@ public class RegistrationActivity extends ActionBarActivity implements OnClickLi
         TelephonyManager tMgr = (TelephonyManager) getApplicationContext().getSystemService(Context.TELEPHONY_SERVICE);
         String mPhoneNumber = tMgr.getLine1Number();
         t2.setText(mPhoneNumber);
+        Toast.makeText(RegistrationActivity.this, "" + mPhoneNumber, Toast.LENGTH_SHORT).show();
     }
 
     public void onClick(View vw) {
@@ -79,16 +80,20 @@ public class RegistrationActivity extends ActionBarActivity implements OnClickLi
         if (Name.length() <= 2) {
             t1.setError("Name is mandatory");
             return false;
-        } else if (Number1.length() <= 0) {
+        }
+        if (Number1.length() <= 0) {
             t2.setError("Mobile number is mandatory");
             return false;
-        } else if (Number1.length() < 10) {
+        }
+        if (Number1.length() < 10) {
             t2.setError("Mobile number should be of 10 digits");
             return false;
-        } else if (Number2.length() <= 0) {
+        }
+        if (Number2.length() <= 0) {
             t3.setError("Mobile number is mandatory");
             return false;
-        } else if (Number2.length() < 10) {
+        }
+        if (Number2.length() < 10) {
             t3.setError("Mobile number should be of 10 digits");
             return false;
         } else {

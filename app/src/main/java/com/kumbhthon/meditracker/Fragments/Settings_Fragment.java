@@ -79,16 +79,20 @@ public class Settings_Fragment extends Fragment implements OnClickListener {
         if (Name.length() <= 0) {
             nm.setError("Name is Mandatory");
             return false;
-        } else if (Number1.length() <= 0) {
+        }
+        if (Number1.length() <= 0) {
             n1.setError("Mobile number is mandatory");
             return false;
-        } else if (Number1.length() != 10) {
+        }
+        if (Number1.length() != 10) {
             n1.setError("Mobile number should be of 10 digits");
             return false;
-        } else if (Number2.length() <= 0) {
+        }
+        if (Number2.length() <= 0) {
             n2.setError("Mobile number is mandatory");
             return false;
-        } else if (Number2.length() != 10) {
+        }
+        if (Number2.length() != 10) {
             n2.setError("Mobile number should be of 10 digits");
             return false;
         } else {
