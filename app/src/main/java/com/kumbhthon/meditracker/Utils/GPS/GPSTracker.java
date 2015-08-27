@@ -16,6 +16,7 @@ import android.util.Log;
 public class GPSTracker extends Service implements LocationListener {
 
     private final Context mContext;
+    public AlertDialog.Builder alertDialog;
 
     // flag for GPS status
     boolean isGPSEnabled = false;
@@ -26,7 +27,7 @@ public class GPSTracker extends Service implements LocationListener {
     // flag for GPS status
     boolean canGetLocation = false;
 
-    Location location; // location
+    public Location location; // location
     double latitude; // latitude
     double longitude; // longitude
 
@@ -43,7 +44,6 @@ public class GPSTracker extends Service implements LocationListener {
         this.mContext = context;
         getLocation();
     }
-
 
 
     public Location getLocation() {
@@ -135,7 +135,7 @@ public class GPSTracker extends Service implements LocationListener {
      * On pressing Settings button will lauch Settings Options
      */
     public void showSettingsAlert() {
-        AlertDialog.Builder alertDialog = new AlertDialog.Builder(mContext);
+        alertDialog = new AlertDialog.Builder(mContext);
 
         // Setting Dialog Title
         alertDialog.setTitle("Location Services disable");

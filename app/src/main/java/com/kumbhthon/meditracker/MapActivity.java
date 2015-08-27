@@ -1,6 +1,7 @@
 package com.kumbhthon.meditracker;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.location.Criteria;
 import android.location.Location;
@@ -18,6 +19,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.kumbhthon.meditracker.Analytics.ServerLoader;
 import com.kumbhthon.meditracker.Utils.Constants;
+import com.kumbhthon.meditracker.Utils.GPS.GPSTracker;
 
 
 public class MapActivity extends FragmentActivity {
@@ -1198,6 +1200,7 @@ public class MapActivity extends FragmentActivity {
 
 
     };
+    private GPSTracker gps;
 
 
     @Override
@@ -1206,8 +1209,6 @@ public class MapActivity extends FragmentActivity {
         setContentView(R.layout.map_activity);                                                //
         sendLocatorAction("Hospital");
         try {
-
-            // Loading map
 
             initilizeMap();
 

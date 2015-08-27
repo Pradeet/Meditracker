@@ -4,12 +4,14 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Base64;
+import android.util.Log;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.google.android.gms.location.internal.LocationRequestUpdateData;
 import com.kumbhthon.meditracker.Utils.Constants;
 
 import org.json.JSONArray;
@@ -76,7 +78,7 @@ public class VolleyCommands {
         AppController.getInstance().addToRequestQueue(request);
     }
 
-    public void POSTAction(ArrayList<ActionDetails> actionQueue){
+    public void POSTAction(ArrayList<ActionDetails> actionQueue) {
         final String URL = Constants.BASEURL + "/action";
         JSONArray jsonArray = new JSONArray();
 
@@ -90,8 +92,7 @@ public class VolleyCommands {
             params.put("a_longitude", details.action_Longitude);
             params.put("a_latitude", details.action_Latitude);
             params.put("a_extradata", details.action_extraData);
-            if(!(details.action_Latitude.equals("0.0") || details.action_Longitude.equals("0.0")))
-                jsonArray.put(new JSONObject(params));
+            jsonArray.put(new JSONObject(params));
             params.clear();
         }
         actionQueue.clear();

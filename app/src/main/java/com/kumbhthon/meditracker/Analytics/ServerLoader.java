@@ -1,10 +1,15 @@
 package com.kumbhthon.meditracker.Analytics;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.location.Location;
+import android.util.Log;
 
 import com.google.gson.Gson;
+import com.kumbhthon.meditracker.HospitalLocatorActivity;
 import com.kumbhthon.meditracker.Utils.Constants;
+import com.kumbhthon.meditracker.Utils.GPS.GPSTracker;
 import com.kumbhthon.meditracker.Utils.GPS.LocationTracker;
 
 import org.json.JSONArray;
@@ -79,6 +84,28 @@ public class ServerLoader {
         LocationTracker locationTracker = new LocationTracker(context);
         String Longitude = locationTracker.getLongitude() + "";
         String Latitude = locationTracker.getLatitude() + "";
+        GPSTracker gpsTracker = new GPSTracker(context);
+        boolean b;
+        if (b = gpsTracker.canGetLocation()) {
+            Log.d("Debug","GPS state: " + b);
+        }
+//        if (gpsTracker.location == null){
+//            Longitude = "0.0";
+//            Latitude = "0.0";
+//        } else {
+//            Longitude = gpsTracker.location.getLongitude() + "";
+//            Latitude = gpsTracker.location.getLatitude() + "";
+//        }
+        try {
+            Location location = gpsTracker.getLocation();
+            if (location != null) {
+                Longitude = location.getLongitude() + "";
+                Latitude = location.getLatitude() + "";
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Log.d("GPSlocations", action_data + "  ::::::   " + Longitude + "  :::::::::  " + Latitude);
         ActionDetails actionDetails = new ActionDetails(action_PhoneNumber, timedate, action_Type, action_data, Longitude, Latitude, action_extradata);
 
         ArrayList<ActionDetails> ActionQueue = getActionPrefs();
