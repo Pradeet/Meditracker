@@ -7,7 +7,8 @@ public class Constants {
 //nothing
     //http://haymitch.media.mit.edu:8888/
 //    public static final String BASEURL = "http://192.168.150.1:8000";
-    public static final String BASEURL = "http://haymitch.media.mit.edu:8888";
+//    public static final String BASEURL = "http://haymitch.media.mit.edu:8888";
+    public static final String BASEURL = "http://meditracker.pythonanywhere.com";
 
     public static final String USER_PREFERENCES = "UserPrefs";
 
